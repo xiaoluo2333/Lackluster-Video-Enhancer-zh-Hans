@@ -55,7 +55,7 @@ class ProcessTab:
         self.isPreview = False
         self.userKilled = False
         self.currentRenderOptions = None
-        self.status = "Idle"
+        self.status = "空闲"
         self.animationHandler = AnimationHandler()
         self.tileUpAnimationHandler = AnimationHandler()
         self.tileDownAnimationHandler = AnimationHandler()
@@ -218,7 +218,7 @@ class ProcessTab:
         reply = QMessageBox.question(
             self.parent,
             "",
-            "Output files in render queue already exist, do you want to overwrite?",
+            "渲染队列中的输出文件已存在，是否要覆盖？",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,  # type: ignore
         )
@@ -336,10 +336,10 @@ class ProcessTab:
                         )
                         self.fps = re.search(r"FPS: (\d+)", line).group(1)
                         self.eta = re.search(r"ETA: (.+)", line).group(1)
-                        self.status = "Rendering"
+                        self.status = "正在渲染"
 
                     if "this may take a while" in line.lower():
-                        self.status = "Building Engine, this may take a while."
+                        self.status = "正在构建引擎，这可能需要一些时间。"
 
 
                     if any(char.isalpha() for char in line):
@@ -374,7 +374,7 @@ class ProcessTab:
             log("All render processes completed successfully")
         else:
             log("Some render processes failed: Error code: " + str(self.return_codes))
-            RegularQTPopup("Rendering failed! Please check the logs tab!")
+            RegularQTPopup("渲染失败！请查看日志标签页！")
         # Have to swap the visibility of these here otherwise crash for some reason
         hide_layout_widgets(self.parent.onRenderButtonsContiainer)
         self.parent.startRenderButton.setEnabled(True)
@@ -385,9 +385,9 @@ class ProcessTab:
         self.parent.startRenderButton.clicked.connect(self.parent.startRender)
         self.parent.enableProcessPage()
         self.parent.startRenderButton.setVisible(True)
-        self.parent.FPS.setText("FPS: ")
-        self.parent.ETA.setText("ETA: ")
-        self.parent.STATUS.setText("Status: ")
+        self.parent.FPS.setText("帧率: ")
+        self.parent.ETA.setText("预计剩余: ")
+        self.parent.STATUS.setText("状态: ")
         self.parent.renderQueue.clear()
         if self.currentRenderOptions.isPreview:
             from PySide6.QtMultimedia import QMediaPlayer
@@ -484,15 +484,15 @@ class ProcessTab:
             self.parent.progressBar.setValue(self.currentFrame)
             if self.fps != 0:
                 self.parent.FPS.setVisible(True)
-                self.parent.FPS.setText(f"FPS: {self.fps}")
+                self.parent.FPS.setText(f"帧率: {self.fps}")
             else:
                 self.parent.FPS.setVisible(False)
             if self.eta != 0:
                 self.parent.ETA.setVisible(True)
-                self.parent.ETA.setText(f"ETA: {self.eta}")
+                self.parent.ETA.setText(f"预计剩余: {self.eta}")
             else:
                 self.parent.ETA.setVisible(False)
-            self.parent.STATUS.setText(f"Status: {self.status}")
+            self.parent.STATUS.setText(f"状态: {self.status}")
         if not qimage.isNull():
             label_width = self.parent.previewLabel.width()
             label_height = self.parent.previewLabel.height()

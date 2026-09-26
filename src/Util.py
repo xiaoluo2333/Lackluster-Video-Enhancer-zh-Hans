@@ -180,7 +180,7 @@ def log(message: str):
         with open(os.path.join(CWD, "log.txt"), "a") as f:
             f.write(message + "\n")
     except Exception as e:
-        print(f"An error occurred while logging: {e}", file=sys.stderr)
+        print(f"记录日志时发生错误: {e}", file=sys.stderr)
 
 
 with open(os.path.join(CWD, "log.txt"), "w") as f:
@@ -271,7 +271,7 @@ def getCPUInfo() -> str:
                 # Split the result by lines and return the second line which contains the CPU name
                 return result.stdout.split("\n")[2].strip()
             except Exception as e:
-                print(f"An error occurred while getting CPU brand: {e}")
+                print(f"获取 CPU 型号时发生错误: {e}")
                 return "X86_64 CPU" if CPU_ARCH == "x86_64" else "ARM64 CPU"
         else:
             return cpuinfo.get_cpu_info()["brand_raw"]
@@ -339,7 +339,7 @@ def removeFile(file):
     try:
         os.remove(file)
     except Exception:
-        print("Failed to remove file!")
+        print("删除文件失败！")
 
 
 def downloadFile(link, downloadLocation):
@@ -508,7 +508,7 @@ def print_execution_time(func):
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print(f"{func.__name__} : {end - start:.6f} seconds")
+        print(f"{func.__name__} : {end - start:.6f} 秒")
         return result
     return wrapper
 

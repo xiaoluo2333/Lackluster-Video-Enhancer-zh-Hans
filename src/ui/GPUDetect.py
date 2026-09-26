@@ -19,7 +19,7 @@ class GPUDetect:
                 ).decode()
                 return str(output.strip().split("\n"))
             except Exception:
-                return "Unable to retrieve GPU info on Windows"
+                return "无法在 Windows 上获取 GPU 信息"
 
         elif PLATFORM == "darwin":  # macOS
             try:
@@ -28,7 +28,7 @@ class GPUDetect:
                 ).decode()
                 return output.strip().split(":")[1].strip()
             except Exception:
-                return "Unable to retrieve GPU info on macOS"
+                return "无法在 macOS 上获取 GPU 信息"
 
         elif PLATFORM == "linux":
             try:
@@ -40,12 +40,12 @@ class GPUDetect:
                     # If lspci fails, try reading from /sys/class/graphics
                     with open("/sys/class/graphics/fb0/device/vendor", "r") as f:
                         vendor_id = f.read().strip()
-                    return f"Vendor ID: {vendor_id}"
+                    return f"厂商 ID: {vendor_id}"
                 except Exception:
-                    return "Unable to retrieve GPU info on Linux"
+                    return "无法在 Linux 上获取 GPU 信息"
 
         else:
-            return "Unsupported operating system"
+            return "不支持的操作系统"
 
 
     def getVendor(self):
@@ -66,9 +66,9 @@ class GPUDetect:
         if vendor == "Nvidia":
             try:
                 model = re.findall(r"RTX \d\d\d\d", self.gpu_info)[0]
-                log("GPU Model Found: " + vendor + " " + model)
+                log("找到 GPU 型号: " + vendor + " " + model)
             except Exception:
-                log("Couldnt find gpu model, " + self.gpu_info)
+                log("无法找到 GPU 型号, " + self.gpu_info)
         return model
     
     def getPyTorchFeatures(self) -> str | None:

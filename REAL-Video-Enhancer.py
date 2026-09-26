@@ -175,7 +175,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             reply = QMessageBox.question(
             self,
             "",
-            "Do you want to use simple installation?\n(Recommended for most users)",
+            "是否使用简易安装？\n（推荐大多数用户使用）",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,  # type: ignore
             )
@@ -194,7 +194,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.stackedWidget.setCurrentIndex(4)
                 self.homeBtn.setChecked(False)
                 self.downloadBtn.setChecked(True)
-                self.processBtn.setToolTip("Please install at least one backend to enable processing.")
+                self.processBtn.setToolTip("请至少安装一个后端以启用处理功能。")
                 self.processBtn.setToolTipDuration(0)
 
 
@@ -203,7 +203,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         icon_path = ":/icons/icons/logo-v2.svg"
         self.setWindowIcon(QIcon(icon_path))
         QApplication.setWindowIcon(QIcon(icon_path))
-        self.setWindowTitle("REAL Video Enhancer")
+        self.setWindowTitle("REAL 视频增强器")
         self.setPalette(QApplication.style().standardPalette())
         self.setMinimumSize(950, 600)
 
@@ -214,24 +214,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.backendComboBox.addItems(self.backends)
         printOut = (
             "System Information:\n"
-            + "OS: "
+            + "操作系统: "
             + getOSInfo()
             + "\n"
             + "CPU: "
             + getCPUInfo()
             + "\n"
-            + "RAM: "
+            + "内存: "
             + getRAMAmount()
             + "\n"
-            + "Available Disk Space: "
+            + "可用磁盘空间: "
             + str(round(getAvailableDiskSpace(), 2))
             + "GB"
             + "\n"
             + "\nSoftware Information:\n"
-            + f"REAL Video Enhancer Version: {version}\n"
-            + f"Python Version: {Python().get_version()}\n"
-            + f"Utilizing local backend: {USE_LOCAL_BACKEND}\n"
-            + f"Working Directory: {CWD}\n"
+            + f"REAL 视频增强器版本: {version}\n"
+            + f"Python 版本: {Python().get_version()}\n"
+            + f"使用本地后端: {USE_LOCAL_BACKEND}\n"
+            + f"工作目录: {CWD}\n"
             + self.fullOutput
         )
         self.systemInfoText.setText(printOut)
@@ -274,7 +274,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.animationHandler.fadeInAnimation(self)
 
         if not self.anyBackendsInstalled:
-            RegularQTPopup("Welcome to REAL Video Enhancer!\nPlease install at least one backend to get started.")
+            RegularQTPopup("欢迎使用 REAL 视频增强器！\n请至少安装一个后端以开始使用。")
 
         # these additions are not ready for stable rve just yet.
         #self.denoiseContainer.setVisible(False)
@@ -311,7 +311,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         FileHandler().removeFile(renderOptions.outputPath)
         renderOptions.endTime = self.endTimeSpinBox.value()
         if renderOptions.endTime <= renderOptions.startTime:
-            NotificationOverlay("End time must be greater than start time!", self, timeout=1500)
+            NotificationOverlay("结束时间必须大于开始时间！", self, timeout=1500)
             return
 
 
@@ -369,14 +369,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             new_bitrate = 8 if "10" not in self.settingsTab.in_pix_fmt else 10
             inputText = (
                 f"FPS: {round(self.videoFps, 0)} -> {round(self.videoFps * interpolateTimes, 0) if not self.sloMoModeCheckBox.isChecked() else round(self.videoFps, 0)}\n"
-                + f"Resolution: {self.videoWidth}x{self.videoHeight} -> {self.videoWidth * scale}x{self.videoHeight * scale}\n"
-                + f"Frame Count: {self.videoFrameCount} -> {int(round(self.videoFrameCount * interpolateTimes, 0))}\n"
-                + f"Encoder: {self.videoEncoder} -> {self.settings.settings['encoder']}\n"
-                + f"Container: {self.videoContainer} -> {self.settings.settings['video_container']}\n"
-                + f"Color Space: {self.colorSpace} -> {self.colorSpace}\n"
-                + f"Pixel Format: {self.settingsTab.in_pix_fmt} -> {self.settingsTab.out_pixel_fmt}\n"
+                + f"分辨率: {self.videoWidth}x{self.videoHeight} -> {self.videoWidth * scale}x{self.videoHeight * scale}\n"
+                + f"帧数: {self.videoFrameCount} -> {int(round(self.videoFrameCount * interpolateTimes, 0))}\n"
+                + f"编码器: {self.videoEncoder} -> {self.settings.settings['encoder']}\n"
+                + f"容器: {self.videoContainer} -> {self.settings.settings['video_container']}\n"
+                + f"色彩空间: {self.colorSpace} -> {self.colorSpace}\n"
+                + f"像素格式: {self.settingsTab.in_pix_fmt} -> {self.settingsTab.out_pixel_fmt}\n"
                 + f"HDR: {self.videoHDR} -> {self.videoHDR if self.settings.settings['auto_hdr_mode'] == 'True' else 'False'}\n"
-                + f"Bit Depth: {self.videoBitDepth} bit -> {new_bitrate if self.settings.settings['auto_hdr_mode'] == 'True' else 8} bit\n"
+                + f"位深: {self.videoBitDepth} bit -> {new_bitrate if self.settings.settings['auto_hdr_mode'] == 'True' else 8} bit\n"
             )
             
             self.inputVideoInfoTextEdit.setFontPointSize(10)
@@ -502,11 +502,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.decompressCheckBox.isChecked():
             decompress = None
         if not self.isVideoLoaded:
-            NotificationOverlay("Video is not loaded!", self, timeout=1500)
+            NotificationOverlay("视频尚未加载！", self, timeout=1500)
             return 1
 
         if not interpolate and not upscale and not deblur and not denoise and not decompress:
-            NotificationOverlay("Please select at least one model!", self, timeout=1500)
+            NotificationOverlay("请至少选择一个模型！", self, timeout=1500)
             return 1
 
         backend = self.backendComboBox.currentText()
@@ -530,14 +530,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 )
                 if not dm_scene.downloadModel():
                     NotificationOverlay(
-                        "Unable to download scene detection model, please check your network and try again.",
+                        "无法下载场景检测模型，请检查网络后重试。",
                         self,
                         timeout=1500,
                     )
                     return 1
             if not dm.downloadModel():
                 NotificationOverlay(
-                    "Unable to download model, please check your network and try again.",
+                    "无法下载模型，请检查网络后重试。",
                     self,
                     timeout=1500,
                 )
@@ -557,7 +557,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 )
                 if not dm.downloadModel():
                     NotificationOverlay(
-                        "Unable to add to render queue.\nModel can't be downloaded.\nPlease check your network and try again.",
+                        "无法添加到渲染队列。\n模型无法下载。\n请检查网络后重试。",
                         self,
                         timeout=2500,
                     )
@@ -571,7 +571,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
             if not dm.downloadModel():
                 NotificationOverlay(
-                    "Unable to add to render queue.\nModel can't be downloaded.\nPlease check your network and try again.",
+                    "无法添加到渲染队列。\n模型无法下载。\n请检查网络后重试。",
                     self,
                     timeout=2500,
                 )
@@ -586,7 +586,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
             if not dm.downloadModel():
                 NotificationOverlay(
-                    "Unable to add to render queue.\nModel can't be downloaded.\nPlease check your network and try again.",
+                    "无法添加到渲染队列。\n模型无法下载。\n请检查网络后重试。",
                     self,
                     timeout=2500,
                 )
@@ -600,7 +600,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
             if not dm.downloadModel():
                 NotificationOverlay(
-                    "Unable to add to render queue.\nModel can't be downloaded.\nPlease check your network and try again.",
+                    "无法添加到渲染队列。\n模型无法下载。\n请检查网络后重试。",
                     self,
                     timeout=2500,
                 )
@@ -673,7 +673,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 # check if file already exists in renderQueue
                 if any(item.outputPath == default_output_path for item in self.renderQueue.getQueue()):
-                    NotificationOverlay(f"Skipped (Already in queue): {default_output_path}", self, timeout=1500)
+                    NotificationOverlay(f"已跳过（队列中已存在）: {default_output_path}", self, timeout=1500)
                     continue
 
                 renderOptions = self.getCurrentRenderOptions(
@@ -693,7 +693,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         for renderOptions in self.renderQueue.getQueue():
             if output_path == renderOptions.outputPath:
-                NotificationOverlay("Output file already in queue!", self, timeout=1500)
+                NotificationOverlay("输出文件已在队列中！", self, timeout=1500)
                 return
 
         renderOptions = self.getCurrentRenderOptions()
@@ -701,7 +701,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return
         # alert user that item has been added to queue
         NotificationOverlay(
-            f"{self.inputFileText.text()} Added to queue!", self, timeout=1500
+            f"{self.inputFileText.text()} 已添加到队列！", self, timeout=1500
         )
         self.renderQueue.add(renderOptions)
 
@@ -709,7 +709,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not renderQueue:
             renderQueue = self.renderQueue
         if len(renderQueue.queue) == 0:
-            NotificationOverlay("Render queue is empty!", self, timeout=1500)
+            NotificationOverlay("渲染队列为空！", self, timeout=1500)
             return
         self.startRenderButton.setEnabled(False)
         self.VideoPreview.setVisible(False)
@@ -752,7 +752,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if "{MULTIPLE_FILES}" in inputFile.strip().replace(" ", ""):
             return
         if inputFile == "":
-            NotificationOverlay("Please select a video file!", self, timeout=1500)
+            NotificationOverlay("请选择一个视频文件！", self, timeout=1500)
             return
         if multi_file:
             self.outputFileText.setEnabled(False)
@@ -763,9 +763,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if videoHandler.isValidVideo():
                    self.batchVideos.append(video)
             if self.batchVideos == 0:
-                NotificationOverlay("No valid videos found in the selected folder!", self, timeout=1500)
+                NotificationOverlay("所选文件夹中未找到有效视频！", self, timeout=1500)
                 return
-            NotificationOverlay("Loaded " + str(len(self.batchVideos)) + " videos.", self, timeout=1500)
+            NotificationOverlay("已加载 " + str(len(self.batchVideos)) + " 个视频。", self, timeout=1500)
             self.inputFileText.setText(" { MULTIPLE_FILES } ")
             self.inputFileText.setEnabled(False)
             self.videoWidth = 0
@@ -787,7 +787,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if (
                 not videoHandler.isValidVideo()
             ):  # this handles case for invalid youtube link and invalid video file
-                NotificationOverlay("Not a valid input!", self, timeout=1500)
+                NotificationOverlay("输入无效！", self, timeout=1500)
                 return
             videoHandler.getData()
             self.videoWidth = videoHandler.width
@@ -856,13 +856,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             modelFile, _ = QFileDialog.getOpenFileName(
                 parent=self,
-                caption="Select PyTorch Model",
+                caption="选择 PyTorch 模型",
                 dir=self.homeDir,
                 filter=fileFilter,
             )
                
             if modelFile == "":
-                RegularQTPopup("Please select a model file!")
+                RegularQTPopup("请选择一个模型文件！")
                 return
             
             outputModelPath = os.path.join(
@@ -872,34 +872,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             if os.path.isfile(outputModelPath):
                 NotificationOverlay(
-                    "Model imported successfully!\nPlease restart the app for the changes to take effect.",
+                    "模型导入成功！\n请重启应用以使更改生效。",
                     self,
                     timeout=1500,
                 )
             else:
                 NotificationOverlay(
-                    "Failed to import model!\nPlease try again.", self, timeout=1500
+                    "模型导入失败！\n请重试。", self, timeout=1500
                 )
 
         elif format == "ncnn":
             binFileFilter = "NCNN Bin (*.bin)"
             modelBinFile, _ = QFileDialog.getOpenFileName(
                 parent=self,
-                caption="Select NCNN Bin",
+                caption="选择 NCNN Bin 文件",
                 dir=self.homeDir,
                 filter=binFileFilter,
             )
             if modelBinFile == "":
-                RegularQTPopup("Please select a bin file!")
+                RegularQTPopup("请选择一个 bin 文件！")
                 return
             modelParamFile, _ = QFileDialog.getOpenFileName(
                 parent=self,
-                caption="Select NCNN Param",
+                caption="选择 NCNN Param 文件",
                 dir=os.path.dirname(modelBinFile),
                 filter=os.path.basename(modelBinFile).replace(".bin", ".param"),
             )
             if modelParamFile == "":
-                RegularQTPopup("Please select a param file!")
+                RegularQTPopup("请选择一个 param 文件！")
                 return
             outputModelFolder = os.path.join(
                 CUSTOM_MODELS_PATH,
@@ -917,14 +917,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             if os.path.isfile(outputBinPath) and os.path.isfile(outputParamPath):
                 NotificationOverlay(
-                    "Model imported successfully!\nPlease restart the app for the changes to take effect.",
+                    "模型导入成功！\n请重启应用以使更改生效。",
                     self,
                     timeout=1500,
                 )
 
             else:
                 NotificationOverlay(
-                    "Failed to import model!\nPlease try again.", self, timeout=1500
+                    "模型导入失败！\n请重试。", self, timeout=1500
                 )
 
        
@@ -951,7 +951,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         reply = QMessageBox.question(
             self,
             "",
-            "Are you sure you want to exit?",
+            "是否确定要退出？",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,  # type: ignore
         )

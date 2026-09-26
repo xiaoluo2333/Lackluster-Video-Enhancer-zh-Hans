@@ -358,7 +358,7 @@ class DownloadAndReportToQTThread(QThread):
 
         else:
             print(
-                "Warning: missing key 'Content-Length' in request headers; taking default length of 100 for progress bar."
+                "警告：请求头缺少 'Content-Length' 字段；进度条将默认使用长度 100。"
             )
 
             totalByteSize = 10000000
@@ -473,7 +473,7 @@ class SettingUpBackendPopup(QtWidgets.QDialog):
     def __init__(
         self,
         command: list,
-        title: str = "Setting Up Backend",
+        title: str = "正在设置后端",
         progressBarLength: int = None,
     ):
         super().__init__()
@@ -556,7 +556,7 @@ class DisplayCommandOutputPopup(QtWidgets.QDialog):
     def __init__(
         self,
         command: str,
-        title: str = "Running Command",
+        title: str = "正在运行命令",
         progressBarLength: int = None,
     ):
         super().__init__()
@@ -615,7 +615,7 @@ class DisplayCommandOutputPopup(QtWidgets.QDialog):
         self.horizontalLayout.addItem(spacerItem)
         self.pushButton = QtWidgets.QPushButton(parent=self.widget)
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.setText("Cancel")
+        self.pushButton.setText("取消")
         self.pushButton.clicked.connect(self.closeEvent)
         self.horizontalLayout.addWidget(self.pushButton)
         self.gridLayout.addWidget(self.widget, 2, 0, 1, 1)
@@ -671,7 +671,7 @@ class TextOutputPopup(QtWidgets.QDialog):
     Simple popup to display text information
     """
 
-    def __init__(self, message: str, title: str = "Information"):
+    def __init__(self, message: str, title: str = "提示"):
         super().__init__()
         self.message = message
         self.title = title
@@ -715,7 +715,7 @@ class TextOutputPopup(QtWidgets.QDialog):
 class RegularQTPopup(QtWidgets.QDialog):
     def __init__(self, message):
         super().__init__(None)
-        self.setWindowTitle("REAL Video Enhancer")
+        self.setWindowTitle("REAL 视频增强器")
         self.setFixedSize(400, 100)
         self.setStyleSheet(styleSheet())
         
@@ -738,7 +738,7 @@ class RegularQTPopup(QtWidgets.QDialog):
         button_layout.addItem(spacer)
         
         # Create and add OK button
-        ok_button = QtWidgets.QPushButton("OK")
+        ok_button = QtWidgets.QPushButton("确定")
         ok_button.clicked.connect(self.close)
         button_layout.addWidget(ok_button)
         
@@ -761,7 +761,7 @@ class IndependentQTPopup(QtWidgets.QDialog):
             log(f"Error starting application: {e}")
             raise e
         super().__init__()
-        self.setWindowTitle("REAL Video Enhancer")
+        self.setWindowTitle("REAL 视频增强器")
         self.setFixedSize(400, 100)
         self.setStyleSheet(styleSheet())
         
@@ -792,14 +792,14 @@ class IndependentQTPopup(QtWidgets.QDialog):
 
 def NetworkCheckPopup(hostname="https://raw.githubusercontent.com") -> bool:
     if not networkCheck(hostname=hostname):
-        RegularQTPopup("No Network Connection")
+        RegularQTPopup("无网络连接")
         return False
     # return true if network connection
     return True
 
 def needs_network_else_exit():
     if not HAS_NETWORK_ON_STARTUP:
-        RegularQTPopup("Network is required for this action!\nPlease connect to a network.")
+        RegularQTPopup("此操作需要网络连接！\n请连接网络。")
         os._exit(1)
 
 

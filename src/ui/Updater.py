@@ -37,7 +37,7 @@ class PythonUpdater:
         try:
             output = subprocess.run([PYTHON_EXECUTABLE_PATH, "--version"], check=True, capture_output=True, text=True)
         except subprocess.CalledProcessError: # if python is not found
-            RegularQTPopup("Python not found! Downloading Python...")
+            RegularQTPopup("未找到 Python！正在下载 Python...")
             self.deps.downloadPython(mode="Downloading")
         output = output.stdout.strip().split(" ")[1] # this extracts the version number from the output
         return output
@@ -54,7 +54,7 @@ class PythonUpdater:
             self.deps.downloadPython(mode="Updating")
             self.current_python_version = self.get_current_python_version()
         else:
-            RegularQTPopup("No network connection found! Please connect to the internet to update Python.")        
+            RegularQTPopup("未检测到网络连接！请连接互联网以更新 Python。")        
             
 class BackendUpdater:
     def __init__(self):
@@ -84,7 +84,7 @@ class BackendUpdater:
             FileHandler.removeFolder(BACKEND_PATH) # remove the old backend directory
             self.deps.downloadBackend()
         else:
-            RegularQTPopup("No network connection found! Please connect to the internet to update the backend.")
+            RegularQTPopup("未检测到网络连接！请连接互联网以更新后端。")
 
 
 class ApplicationUpdater:
@@ -163,7 +163,7 @@ class ApplicationUpdater:
             tag_name = latest_release["tag_name"]
 
         else:
-            print(f"Failed to fetch latest version: {response.status_code}")
+            print(f"获取最新版本失败: {response.status_code}")
             tag_name = version  # return current version if it failed to get the latest versions
 
         if clean_tag:
@@ -178,9 +178,9 @@ class ApplicationUpdater:
                 self.remove_old_files()
                 self.move_new_files()
                 self.make_exe_executable()
-                RegularQTPopup("Update complete! Please restart the app.")
+                RegularQTPopup("更新完成！请重启应用。")
             else:
-                RegularQTPopup("No update available!")
+                RegularQTPopup("没有可用更新！")
 
 
 class DependencyUpdateChecker:

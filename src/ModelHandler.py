@@ -698,9 +698,9 @@ def getModels(backend:str):
             deblurModels = {}
         case _:
             RegularQTPopup(
-                "Failed to import any backends!, please try to reinstall the app!"
+                "无法导入任何后端！请尝试重新安装应用！"
             )
-            errorAndLog("Failed to import any backends!")
+            errorAndLog("无法导入任何后端！")
             return {}
     return interpolateModels, upscaleModels, deblurModels, denoiseModels, decompressModels, sceneChangeModels
 

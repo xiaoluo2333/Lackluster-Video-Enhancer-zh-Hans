@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
@@ -35,7 +35,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>REAL 视频增强器</string>
   </property>
   <property name="toolTipDuration">
    <number>0</number>
@@ -345,7 +345,7 @@ padding:5px 10px;
                    <item>
                     <widget class="QLabel" name="label_13">
                      <property name="text">
-                      <string>Support Me!</string>
+                      <string>支持我！</string>
                      </property>
                     </widget>
                    </item>
@@ -358,7 +358,7 @@ padding:5px 10px;
                       </size>
                      </property>
                      <property name="toolTip">
-                      <string>Support Me!</string>
+                      <string>支持我！</string>
                      </property>
                      <property name="statusTip">
                       <string>&quot;Support Me!&quot;</string>
@@ -384,7 +384,7 @@ padding:5px 10px;
                    <item>
                     <widget class="QLabel" name="label_16">
                      <property name="text">
-                      <string>GitHub Page</string>
+                      <string>GitHub 页面</string>
                      </property>
                     </widget>
                    </item>
@@ -450,7 +450,7 @@ padding:5px 10px;
                     </font>
                    </property>
                    <property name="text">
-                    <string>REAL Video Enhancer</string>
+                    <string>REAL 视频增强器</string>
                    </property>
                   </widget>
                  </item>
@@ -738,7 +738,7 @@ border-radius: 10
                        <item>
                         <widget class="QLabel" name="label_9">
                          <property name="text">
-                          <string>Start Time (seconds)</string>
+                          <string>开始时间（秒）</string>
                          </property>
                         </widget>
                        </item>
@@ -748,7 +748,7 @@ border-radius: 10
                        <item>
                         <widget class="QLabel" name="label_52">
                          <property name="text">
-                          <string>End Time (seconds)</string>
+                          <string>结束时间（秒）</string>
                          </property>
                         </widget>
                        </item>
@@ -788,7 +788,7 @@ border-radius: 10
                              <enum>Qt::LayoutDirection::LeftToRight</enum>
                             </property>
                             <property name="text">
-                             <string>Render Preview</string>
+                             <string>渲染预览</string>
                             </property>
                            </widget>
                           </item>
@@ -801,7 +801,7 @@ border-radius: 10
                              </size>
                             </property>
                             <property name="toolTip">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Render Preview:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;     - Renders a small portion of the video to show the results (most useful for upscaling)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;渲染预览：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;     - 渲染视频的一小段以预览效果（对放大最有用）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="text">
                              <string/>
@@ -845,7 +845,7 @@ background-color: #1f232a
 }</string>
                      </property>
                      <property name="text">
-                      <string>ETA: </string>
+                      <string>预计剩余: </string>
                      </property>
                     </widget>
                    </item>
@@ -862,7 +862,7 @@ background-color: #1f232a
 }</string>
                      </property>
                      <property name="text">
-                      <string>FPS:</string>
+                      <string>帧率:</string>
                      </property>
                     </widget>
                    </item>
@@ -879,7 +879,7 @@ background-color: #1f232a
 }</string>
                      </property>
                      <property name="text">
-                      <string>STATUS:</string>
+                      <string>状态:</string>
                      </property>
                     </widget>
                    </item>
@@ -1024,7 +1024,7 @@ background-color:#343b47
                            </size>
                           </property>
                           <attribute name="title">
-                           <string>General</string>
+                           <string>通用</string>
                           </attribute>
                           <layout class="QVBoxLayout" name="verticalLayout_10">
                            <property name="spacing">
@@ -1157,7 +1157,7 @@ background-color:#343b47
                                         <string notr="true"/>
                                        </property>
                                        <property name="text">
-                                        <string>Select Input File</string>
+                                        <string>选择输入文件</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1184,7 +1184,7 @@ background-color:#343b47
                                         <string notr="true"/>
                                        </property>
                                        <property name="text">
-                                        <string>Batch Select</string>
+                                        <string>批量选择</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1257,7 +1257,7 @@ background-color:#343b47
                                         <string notr="true"/>
                                        </property>
                                        <property name="text">
-                                        <string>Select Output Folder</string>
+                                        <string>选择输出文件夹</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1287,7 +1287,7 @@ background-color:#343b47
                                         <string notr="true"/>
                                        </property>
                                        <property name="text">
-                                        <string>Open Output Folder</string>
+                                        <string>打开输出文件夹</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1355,7 +1355,7 @@ background-color:#343b47
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Backend</string>
+                                        <string>后端</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1422,7 +1422,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Interpolate</string>
+                                           <string>补帧</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -1496,7 +1496,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Interpolate Model</string>
+                                           <string>补帧模型</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -1557,7 +1557,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Interpolation Multiplier</string>
+                                           <string>补帧倍数</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -1621,7 +1621,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>SloMo Mode</string>
+                                           <string>慢动作模式</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -1647,7 +1647,7 @@ background-color:#343b47
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Increase video length instead of framerate when interpolating.&lt;/p&gt;&lt;p&gt;Audio and Subtitles will not be transfered to output video.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;补帧时增加视频时长而不是帧率。&lt;/p&gt;&lt;p&gt;音频与字幕不会转移到输出视频。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -1696,7 +1696,7 @@ background-color:#343b47
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Decompress</string>
+                                        <string>去压缩</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1734,7 +1734,7 @@ background-color:#343b47
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Decompress Model</string>
+                                        <string>去压缩模型</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1786,7 +1786,7 @@ background-color:#343b47
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Denoise</string>
+                                        <string>降噪</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1839,7 +1839,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Denoise Model</string>
+                                           <string>降噪模型</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -1894,7 +1894,7 @@ background-color:#343b47
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Deblur</string>
+                                        <string>去模糊</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -1962,7 +1962,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Deblur Model</string>
+                                           <string>去模糊模型</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2032,7 +2032,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Upscale</string>
+                                           <string>放大</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2103,7 +2103,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Upscale Model</string>
+                                           <string>放大模型</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2158,7 +2158,7 @@ background-color:#343b47
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Upscale Scale</string>
+                                           <string>放大倍数</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2171,7 +2171,7 @@ background-color:#343b47
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Upscale Scale:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;   - &lt;/span&gt;Custom output scale no matter the model. Will run AI on video frame once, and scale the image to match the multiplier. Useful for 4x models.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;放大倍数：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;   - &lt;/span&gt;无论使用什么模型都按该倍数输出。AI 只会对视频帧处理一次，然后将图像缩放到对应的倍数。对 4x 模型很有用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -2265,7 +2265,7 @@ text-align: center;
 }</string>
                                        </property>
                                        <property name="text">
-                                        <string> Add to Render Queue</string>
+                                        <string> 添加到渲染队列</string>
                                        </property>
                                        <property name="icon">
                                         <iconset resource="resources.qrc">
@@ -2351,14 +2351,14 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adwaita Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;FPS:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Resolution:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Frame Count:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Encoder:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Container:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Color Space:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Pixel Format:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Is HDR:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Bit Depth:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;分辨率:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;帧数:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;编码器:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;容器:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;色彩空间:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;像素格式:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;HDR:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;位深:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -2376,7 +2376,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </widget>
                          <widget class="QWidget" name="tab_6">
                           <attribute name="title">
-                           <string>Encoder Options</string>
+                           <string>编码器选项</string>
                           </attribute>
                           <layout class="QHBoxLayout" name="horizontalLayout_43">
                            <item>
@@ -2457,7 +2457,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Encoder Settings</string>
+                                           <string>编码器设置</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2526,7 +2526,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                               </size>
                                              </property>
                                              <property name="toolTip">
-                                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Encoder command:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;     -&lt;/span&gt; Encoder settings passed to FFMpeg, can be manually tweaked.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;编码器命令：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;     -&lt;/span&gt; 传递给 FFMpeg 的编码器参数，可手动调整。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                              </property>
                                              <property name="text">
                                               <string/>
@@ -2562,7 +2562,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Video Encoder</string>
+                                           <string>视频编码器</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2588,7 +2588,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Encoder:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- Compression algorithm for video, most common is libx264&lt;/p&gt;&lt;p&gt;- Any encoder without a device label is a CPU encoder.&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;Lossy Encoders:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- libx264 (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov, avi&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;- libx265 (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;- vp9 (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, webm&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;- av1 (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, webm&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;Lossless Encoders:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- prores (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;- ffv1 (&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, avi&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;编码器：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 视频压缩算法，最常用的是 libx264&lt;/p&gt;&lt;p&gt;- 未标注设备的编码器均为 CPU 编码器。&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;有损编码器：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- libx264（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov, avi&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;- libx265（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;- vp9（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, webm&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;- av1（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, webm&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;无损编码器：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- prores（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;- ffv1（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, avi&lt;/span&gt;）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -2675,7 +2675,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Video Encoder Speed</string>
+                                           <string>视频编码速度</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2701,7 +2701,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Encoder Speed:&lt;/span&gt;&lt;/p&gt;&lt;p&gt; - Speed at which the encoder processes the video, &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;Slower&lt;/span&gt; processing time means &lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;Better results for the file size&lt;/span&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;编码速度：&lt;/span&gt;&lt;/p&gt;&lt;p&gt; - 编码器处理视频的速度，&lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;更慢&lt;/span&gt;的处理时间意味着&lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;在文件大小相同的情况下画质更好&lt;/span&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -2763,7 +2763,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Video Quality</string>
+                                           <string>视频质量</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2834,7 +2834,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Video Container</string>
+                                           <string>视频容器</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2860,7 +2860,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Video Container&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- Changes the video container in the default output file generated container.&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;mkv &lt;/span&gt;is &lt;span style=&quot; font-weight:700;&quot;&gt;recomended&lt;/span&gt; due to its extensive support for different formats.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;WARNING: Changing this &lt;/span&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;MAY&lt;/span&gt;&lt;span style=&quot; font-weight:700;&quot;&gt; break encoder compadibility. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Please look at the audio and video encoder tooltips for compadibility.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;视频容器&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 更改默认输出文件所使用的视频容器。&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;mkv &lt;/span&gt;因其对各种格式的广泛支持而被&lt;span style=&quot; font-weight:700;&quot;&gt;推荐&lt;/span&gt;使用。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;警告：更改此项&lt;/span&gt;&lt;span style=&quot; font-weight:700; text-decoration: underline;&quot;&gt;可能&lt;/span&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;破坏编码器兼容性。 &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;请查看音频和视频编码器的提示以确认兼容性。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -2916,7 +2916,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Video Pixel Format</string>
+                                           <string>视频像素格式</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -2942,7 +2942,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Pixel Format&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- D&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;efines how color information is stored for each pixel in a video frame.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv420p: Most common, removes the most information. &lt;/span&gt;(&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov, avi, webm&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv422p: In between 420p and 444p. &lt;/span&gt;(&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv444p: Keeps the most information. &lt;/span&gt;(&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;)&lt;br/&gt;&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;yuv 420/422/444 p10le: 10 bit version of each. (MKV and MP4 containers only) &lt;/span&gt;(&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;像素格式&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;定义视频帧中每个像素的颜色信息存储方式。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv420p：最常见，丢弃的信息最多。 &lt;/span&gt;（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mp4, mov, avi, webm&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv422p：介于 420p 与 444p 之间。 &lt;/span&gt;（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;）&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;- yuv444p：保留的信息最多。 &lt;/span&gt;（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;）&lt;br/&gt;&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-family:'Droid Sans Mono','monospace','monospace'; font-size:9pt; color:#cccccc;&quot;&gt;yuv 420/422/444 p10le：各自的 10 位版本。（仅 mkv 与 mp4 容器） &lt;/span&gt;（&lt;span style=&quot; font-weight:700;&quot;&gt;mkv, mov, mp4&lt;/span&gt;）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -3009,7 +3009,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Audio Encoder</string>
+                                           <string>音频编码器</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -3035,7 +3035,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Audio Encoder&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;Recommended &lt;/span&gt;to use &lt;span style=&quot; font-weight:700;&quot;&gt;aac&lt;/span&gt; if the video container is &lt;span style=&quot; font-weight:700;&quot;&gt;not mkv, &lt;/span&gt;or if the output video has audio isses.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;- &lt;/span&gt;copy_audio: No re-encoding is done on the output&lt;/p&gt;&lt;p&gt;- aac: Most common, and high quality.&lt;/p&gt;&lt;p&gt;- libmp3lame: Used less, low quality.&lt;/p&gt;&lt;p&gt;- opus: Used for &lt;span style=&quot; font-weight:700;&quot;&gt;webm&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;音频编码器&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 如果视频容器&lt;span style=&quot; font-weight:700;&quot;&gt;不是 mkv，&lt;/span&gt;或输出视频有音频问题，&lt;span style=&quot; font-weight:700;&quot;&gt;推荐 &lt;/span&gt;使用 &lt;span style=&quot; font-weight:700;&quot;&gt;aac&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;- &lt;/span&gt;copy_audio：输出时不做重新编码&lt;/p&gt;&lt;p&gt;- aac：最常见，质量高。&lt;/p&gt;&lt;p&gt;- libmp3lame：较少使用，质量低。&lt;/p&gt;&lt;p&gt;- opus：用于 &lt;span style=&quot; font-weight:700;&quot;&gt;webm&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -3092,7 +3092,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Audio Bitrate</string>
+                                           <string>音频比特率</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -3118,7 +3118,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Audio Bitrate&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;- &lt;/span&gt;Higher bitrate = higher quality&lt;/p&gt;&lt;p&gt;   - Only applies to &lt;span style=&quot; font-weight:700;&quot;&gt;aac &lt;/span&gt;and &lt;span style=&quot; font-weight:700;&quot;&gt;libmp3lame&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;音频比特率&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;- &lt;/span&gt;比特率越高 = 质量越高&lt;/p&gt;&lt;p&gt;   - 仅对 &lt;span style=&quot; font-weight:700;&quot;&gt;aac &lt;/span&gt;与 &lt;span style=&quot; font-weight:700;&quot;&gt;libmp3lame&lt;/span&gt; 生效。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -3175,7 +3175,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </font>
                                           </property>
                                           <property name="text">
-                                           <string>Subtiitle Encoder</string>
+                                           <string>字幕编码器</string>
                                           </property>
                                          </widget>
                                         </item>
@@ -3201,7 +3201,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                                            </size>
                                           </property>
                                           <property name="toolTip">
-                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Subtitle Encoder&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- &lt;span style=&quot; font-weight:700;&quot;&gt;Recommended &lt;/span&gt;to use &lt;span style=&quot; font-weight:700;&quot;&gt;webvtt&lt;/span&gt; if the video container is &lt;span style=&quot; font-weight:700;&quot;&gt;not mkv, &lt;/span&gt;or if the output video has audio isses.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;All encoders here are &lt;span style=&quot; font-weight:700;&quot;&gt;Text Only. &lt;/span&gt;If you are enhancing a &lt;span style=&quot; font-weight:700;&quot;&gt;DVD, &lt;/span&gt;use &lt;span style=&quot; font-weight:700;&quot;&gt;copy_subtitle&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;字幕编码器&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 如果视频容器&lt;span style=&quot; font-weight:700;&quot;&gt;不是 mkv，&lt;/span&gt;或输出视频有问题，&lt;span style=&quot; font-weight:700;&quot;&gt;推荐 &lt;/span&gt;使用 &lt;span style=&quot; font-weight:700;&quot;&gt;webvtt&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;&lt;br/&gt;此处所有编码器都是&lt;span style=&quot; font-weight:700;&quot;&gt;纯文本。 &lt;/span&gt;如果你要处理的是 &lt;span style=&quot; font-weight:700;&quot;&gt;DVD，&lt;/span&gt;请使用 &lt;span style=&quot; font-weight:700;&quot;&gt;copy_subtitle&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -3286,7 +3286,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                            </size>
                           </property>
                           <attribute name="title">
-                           <string>Render Queue</string>
+                           <string>渲染队列</string>
                           </attribute>
                           <layout class="QVBoxLayout" name="verticalLayout_27">
                            <item>
@@ -3341,21 +3341,21 @@ border-radius:10px;
                                  <item>
                                   <widget class="QPushButton" name="RemoveFromRenderQueue">
                                    <property name="text">
-                                    <string>Remove</string>
+                                    <string>移除</string>
                                    </property>
                                   </widget>
                                  </item>
                                  <item>
                                   <widget class="QPushButton" name="MoveUpRenderQueue">
                                    <property name="text">
-                                    <string>Move Up</string>
+                                    <string>上移</string>
                                    </property>
                                   </widget>
                                  </item>
                                  <item>
                                   <widget class="QPushButton" name="MoveDownRenderQueue">
                                    <property name="text">
-                                    <string>Move Down</string>
+                                    <string>下移</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -3401,7 +3401,7 @@ border-radius:10px;
                              <item row="0" column="0">
                               <widget class="QLabel" name="label_51">
                                <property name="text">
-                                <string>Finished Output Files:</string>
+                                <string>已完成的输出文件：</string>
                                </property>
                               </widget>
                              </item>
@@ -3423,7 +3423,7 @@ border-radius:10px;
                            </size>
                           </property>
                           <attribute name="title">
-                           <string>Advanced</string>
+                           <string>高级</string>
                           </attribute>
                           <layout class="QVBoxLayout" name="verticalLayout_29">
                            <item>
@@ -3510,7 +3510,7 @@ border-radius:10px;
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>General Settings</string>
+                                     <string>通用设置</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -3546,7 +3546,7 @@ border-radius:10px;
                                         <string/>
                                        </property>
                                        <property name="text">
-                                        <string>Benchmark Mode</string>
+                                        <string>基准测试模式</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -3572,7 +3572,7 @@ border-radius:10px;
                                         </size>
                                        </property>
                                        <property name="toolTip">
-                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Perform processing without outputing new video. This tests the raw performance of the inference.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;只进行处理而不输出新的视频。用于测试推理的原始性能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                        </property>
                                        <property name="text">
                                         <string/>
@@ -3640,7 +3640,7 @@ border-radius:10px;
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>Upscale/Restoration Tile Settings</string>
+                                     <string>放大/修复分块设置</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -3670,7 +3670,7 @@ border-radius:10px;
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Tiling</string>
+                                        <string>分块</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -3696,7 +3696,7 @@ border-radius:10px;
                                         </size>
                                        </property>
                                        <property name="toolTip">
-                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Split up processing upscaled frames into chunks.&lt;/p&gt;&lt;p&gt;Lowers VRAM usage, but also slows down render. &lt;/p&gt;&lt;p&gt;Only use when render failes due to VRAM limits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将放大后的帧切分成若干块。&lt;/p&gt;&lt;p&gt;可降低显存占用，但也会让渲染变慢。 &lt;/p&gt;&lt;p&gt;仅在因显存不足导致渲染失败时使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                        </property>
                                        <property name="text">
                                         <string/>
@@ -3745,7 +3745,7 @@ border-radius:10px;
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Tile Size</string>
+                                        <string>分块大小</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -3830,7 +3830,7 @@ border-radius:10px;
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>Interpolate Settings</string>
+                                     <string>补帧设置</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -3845,7 +3845,7 @@ border-radius:10px;
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Dynamic Scaled Flow (Pytorch Only)</string>
+                                        <string>动态缩放光流（仅 PyTorch）</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -3871,7 +3871,7 @@ border-radius:10px;
                                         </size>
                                        </property>
                                        <property name="toolTip">
-                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scales optical flow based on the difference between frames.&lt;/p&gt;&lt;p&gt;Helps with anime interpolation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;根据帧间差异缩放光流。&lt;/p&gt;&lt;p&gt;有助于动画补帧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                        </property>
                                        <property name="text">
                                         <string/>
@@ -3905,7 +3905,7 @@ border-radius:10px;
                                         </font>
                                        </property>
                                        <property name="text">
-                                        <string>Ensemble (Pytorch/TensorRT Only)</string>
+                                        <string>集成（仅 PyTorch/TensorRT）</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -3931,7 +3931,7 @@ border-radius:10px;
                                         </size>
                                        </property>
                                        <property name="toolTip">
-                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ensembles flow, can produce better results.&lt;/p&gt;&lt;p&gt;Only compadible with older RIFE models and GMFSS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;集成光流，可能产生更好的结果。&lt;/p&gt;&lt;p&gt;仅兼容较旧的 RIFE 模型与 GMFSS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                        </property>
                                        <property name="text">
                                         <string/>
@@ -3983,7 +3983,7 @@ border-radius:10px;
                          </widget>
                          <widget class="QWidget" name="tab_5">
                           <attribute name="title">
-                           <string>Logs</string>
+                           <string>日志</string>
                           </attribute>
                           <layout class="QHBoxLayout" name="horizontalLayout_10">
                            <item>
@@ -4406,7 +4406,7 @@ QTabWidget::pane { /* The tab widget frame */
                     </property>
                     <widget class="QWidget" name="tab_2">
                      <attribute name="title">
-                      <string>Output Settings</string>
+                      <string>输出设置</string>
                      </attribute>
                      <layout class="QVBoxLayout" name="verticalLayout_17">
                       <item>
@@ -4468,7 +4468,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Output folder directory</string>
+                                   <string>输出文件夹目录</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4501,7 +4501,7 @@ QTabWidget::pane { /* The tab widget frame */
                                 <item>
                                  <widget class="QPushButton" name="select_output_folder_location_btn">
                                   <property name="text">
-                                   <string>Select Output Folder</string>
+                                   <string>选择输出文件夹</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4534,7 +4534,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Use the same output folder as the input file</string>
+                                   <string>使用与输入文件相同的输出文件夹</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4560,7 +4560,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </size>
                                   </property>
                                   <property name="toolTip">
-                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Use the same output folder as the input file:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- Enabled: The output folder will be the same as the directory where the original input file is located. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;使用与输入文件相同的输出文件夹：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 启用：输出文件夹将与原始输入文件所在的目录相同。 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -4609,7 +4609,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Scene Change Detection Enabled</string>
+                                   <string>启用场景切换检测</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4635,7 +4635,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </size>
                                   </property>
                                   <property name="toolTip">
-                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Scene Change Detection Enabled:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- Enabled: Attempts to detect when scenes change in a video. &lt;/p&gt;&lt;p&gt;   When running an interpolation, it will avoide interpolating over these scene changes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;启用场景切换检测：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 启用：尝试检测视频中场景发生切换的位置。 &lt;/p&gt;&lt;p&gt;   在进行补帧时，会避免跨越这些场景切换点进行补帧。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -4684,7 +4684,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Scene Change Detection Method</string>
+                                   <string>场景切换检测方法</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4710,7 +4710,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </size>
                                   </property>
                                   <property name="toolTip">
-                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Scene Change Detection Method&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- mean: fastest, least accurate&lt;/p&gt;&lt;p&gt;- mean (segmented): fast, prone to overdetection&lt;/p&gt;&lt;p&gt;- pyscenedetect: slow, accuate &lt;span style=&quot; font-weight:700;&quot;&gt;(Recommended)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;场景切换检测方法&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- mean：最快，最不准确&lt;/p&gt;&lt;p&gt;- mean (segmented)：较快，容易过度检测&lt;/p&gt;&lt;p&gt;- pyscenedetect：慢，准确 &lt;span style=&quot; font-weight:700;&quot;&gt;（推荐）&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -4776,7 +4776,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Scene Change Detection Threshold</string>
+                                   <string>场景切换检测阈值</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4802,7 +4802,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </size>
                                   </property>
                                   <property name="toolTip">
-                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Scene Change Detection Threshold&lt;/span&gt;&lt;/p&gt;&lt;p&gt; - Lower number: &lt;span style=&quot; font-weight:700;&quot;&gt;higher&lt;/span&gt; chance of detecting scene changes, with risk of &lt;span style=&quot; font-weight:700;&quot;&gt;overdetection&lt;/span&gt;.&lt;/p&gt;&lt;p&gt; - Higher number: &lt;span style=&quot; font-weight:700;&quot;&gt;lower &lt;/span&gt;chance of detecting scene changes, with risk of &lt;span style=&quot; font-weight:700;&quot;&gt;underdetection.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;   - &lt;span style=&quot; font-weight:700;&quot;&gt;Recommended: &lt;/span&gt;2-3 for real life, 4 for animation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;场景切换检测阈值&lt;/span&gt;&lt;/p&gt;&lt;p&gt; - 数值越低：检测到场景切换的几率&lt;span style=&quot; font-weight:700;&quot;&gt;越高&lt;/span&gt;，但有&lt;span style=&quot; font-weight:700;&quot;&gt;过度检测&lt;/span&gt;的风险。&lt;/p&gt;&lt;p&gt; - 数值越高：检测到场景切换的几率&lt;span style=&quot; font-weight:700;&quot;&gt;越低&lt;/span&gt;，但有&lt;span style=&quot; font-weight:700;&quot;&gt;漏检&lt;/span&gt;的风险。&lt;/p&gt;&lt;p&gt;   - &lt;span style=&quot; font-weight:700;&quot;&gt;推荐： &lt;/span&gt;实拍视频用 2-3，动画用 4。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -4863,7 +4863,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Auto Border Cropping</string>
+                                   <string>自动边框裁剪</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -4889,7 +4889,7 @@ QTabWidget::pane { /* The tab widget frame */
                                    </size>
                                   </property>
                                   <property name="toolTip">
-                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Audo Border Cropping:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- Will automatically remove black bars if they are present throughout a video, can increase performance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;自动边框裁剪：&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 如果整个视频都存在黑边，会自动将其移除，可提升性能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -4923,7 +4923,7 @@ QTabWidget::pane { /* The tab widget frame */
                     </widget>
                     <widget class="QWidget" name="tab_3">
                      <attribute name="title">
-                      <string>Render Settings</string>
+                      <string>渲染设置</string>
                      </attribute>
                      <layout class="QVBoxLayout" name="verticalLayout_22">
                       <item>
@@ -4942,7 +4942,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>Precision</string>
+                              <string>精度</string>
                              </property>
                             </widget>
                            </item>
@@ -4955,7 +4955,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Precision:&lt;/p&gt;&lt;p&gt; - Auto: Uses bfloat16 on Ampere+/RTX 30-series and newer GPUs, float16 elsewhere.&lt;/p&gt;&lt;p&gt; - Float16: Faster inference and less VRAM usage.&lt;/p&gt;&lt;p&gt; - Bfloat16: Same speed as float16 on RTX 30-series and newer, with better dynamic range (avoids overflow on bright/HDR content).&lt;/p&gt;&lt;p&gt; - Float32: Slower inference and more VRAM usage, supported on more GPUs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;精度：&lt;/p&gt;&lt;p&gt; - Auto：在 Ampere+/RTX 30 系列及更新的 GPU 上使用 bfloat16，其他情况使用 float16。&lt;/p&gt;&lt;p&gt; - Float16：推理更快，显存占用更少。&lt;/p&gt;&lt;p&gt; - Bfloat16：在 RTX 30 系列及更新的 GPU 上与 float16 速度相同，但动态范围更好（避免明亮/HDR 内容溢出）。&lt;/p&gt;&lt;p&gt; - Float32：推理更慢，显存占用更多，但支持更多 GPU。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5007,7 +5007,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>TensorRT Optimization Level</string>
+                              <string>TensorRT 优化等级</string>
                              </property>
                             </widget>
                            </item>
@@ -5020,7 +5020,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;TensorRT Optimization Level:&lt;/p&gt;&lt;p&gt;- Lower means less optimization, but faster engine generation time.&lt;/p&gt;&lt;p&gt;- Higher means more optimization, but slower engine generation time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;TensorRT 优化等级：&lt;/p&gt;&lt;p&gt;- 等级越低表示优化越少，但引擎生成速度更快。&lt;/p&gt;&lt;p&gt;- 等级越高表示优化越多，但引擎生成速度更慢。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5080,7 +5080,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>Auto HDR Mode</string>
+                              <string>自动 HDR 模式</string>
                              </property>
                             </widget>
                            </item>
@@ -5106,7 +5106,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Auto HDR Mode&lt;/p&gt;&lt;p&gt;- Auto enables HDR mode if RVE detects that the video that is being rendered is HDR. &lt;span style=&quot; font-weight:700;&quot;&gt;This will cause slower rendering if the video is HDR.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;HDR is only color tested on x264 and x265 encoders.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; ont-weight:700&quot;&gt; - The preview colors may be distorted as the preview itself is not HDR.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;自动 HDR 模式&lt;/p&gt;&lt;p&gt;- 如果 RVE 检测到正在渲染的视频是 HDR，Auto 会启用 HDR 模式。&lt;span style=&quot; font-weight:700;&quot;&gt;如果视频是 HDR，这会导致渲染变慢。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;HDR 仅在 x264 和 x265 编码器上测试过色彩。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; ont-weight:700&quot;&gt; - 预览画面的颜色可能会失真，因为预览本身并不是 HDR。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5147,7 +5147,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>TensorRT Dynamic Engine</string>
+                              <string>TensorRT 动态引擎</string>
                              </property>
                             </widget>
                            </item>
@@ -5173,7 +5173,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;TensorRT Dynamic Engine:&lt;/p&gt;&lt;p&gt;- Enables TensorRT to build for many different resolutions in one engine.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;TensorRT 动态引擎：&lt;/p&gt;&lt;p&gt;- 允许 TensorRT 在一个引擎中为多种不同分辨率构建。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5214,7 +5214,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>Interpolation UHD Mode</string>
+                              <string>补帧 UHD 模式</string>
                              </property>
                             </widget>
                            </item>
@@ -5240,7 +5240,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Saves VRAM and speeds up inference at resolutions above 1080p by calculating flow at a lower resolution. (GMFSS/GIMM)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在 1080p 以上分辨率时，通过以较低分辨率计算光流来节省显存并加速推理。（GMFSS/GIMM）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5275,7 +5275,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>NCNN GPU ID</string>
+                              <string>NCNN GPU 编号</string>
                              </property>
                             </widget>
                            </item>
@@ -5288,7 +5288,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NCNN GPU ID -&lt;/p&gt;&lt;p&gt;Sets what GPU is used for NCNN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NCNN GPU ID -&lt;/p&gt;&lt;p&gt;设置 NCNN 使用哪块 GPU&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5326,7 +5326,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </font>
                              </property>
                              <property name="text">
-                              <string>PyTorch GPU ID</string>
+                              <string>PyTorch GPU 编号</string>
                              </property>
                             </widget>
                            </item>
@@ -5339,7 +5339,7 @@ QTabWidget::pane { /* The tab widget frame */
                               </size>
                              </property>
                              <property name="toolTip">
-                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PyTorch GPU ID -&lt;/p&gt;&lt;p&gt;Sets what GPU is used for PyTorch&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;PyTorch GPU ID -&lt;/p&gt;&lt;p&gt;设置 PyTorch 使用哪块 GPU&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                              </property>
                              <property name="text">
                               <string/>
@@ -5371,7 +5371,7 @@ QTabWidget::pane { /* The tab widget frame */
                     </widget>
                     <widget class="QWidget" name="tab_4">
                      <attribute name="title">
-                      <string>RVE Settings</string>
+                      <string>RVE 设置</string>
                      </attribute>
                      <layout class="QVBoxLayout" name="verticalLayout_23">
                       <item>
@@ -5406,7 +5406,7 @@ QTabWidget::pane { /* The tab widget frame */
                                </font>
                               </property>
                               <property name="text">
-                               <string>Preview Enabled</string>
+                               <string>启用预览</string>
                               </property>
                              </widget>
                             </item>
@@ -5459,7 +5459,7 @@ QTabWidget::pane { /* The tab widget frame */
                                </font>
                               </property>
                               <property name="text">
-                               <string>Discord Rich Presence</string>
+                               <string>Discord 状态展示</string>
                               </property>
                              </widget>
                             </item>
@@ -5485,7 +5485,7 @@ QTabWidget::pane { /* The tab widget frame */
                                </size>
                               </property>
                               <property name="toolTip">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show REAL Video Enhancer in discord.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在 Discord 中显示 REAL Video Enhancer。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="text">
                                <string/>
@@ -5529,7 +5529,7 @@ QTabWidget::pane { /* The tab widget frame */
                                <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
                               </property>
                               <property name="text">
-                               <string>Open RVE Folder</string>
+                               <string>打开 RVE 文件夹</string>
                               </property>
                              </widget>
                             </item>
@@ -5562,7 +5562,7 @@ QTabWidget::pane { /* The tab widget frame */
                      <item>
                       <widget class="QPushButton" name="resetSettingsBtn">
                        <property name="text">
-                        <string>Reset Settings</string>
+                        <string>重置设置</string>
                        </property>
                       </widget>
                      </item>
@@ -5638,7 +5638,7 @@ background-color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Import Custom Upscale Model</string>
+                    <string>导入自定义放大模型</string>
                    </property>
                   </widget>
                  </item>
@@ -5666,7 +5666,7 @@ background-color:white;
                       <bool>true</bool>
                      </property>
                      <property name="text">
-                      <string>Select Model (NCNN/.bin+.param)</string>
+                      <string>选择模型 (NCNN/.bin+.param)</string>
                      </property>
                     </widget>
                    </item>
@@ -5676,7 +5676,7 @@ background-color:white;
                       <bool>true</bool>
                      </property>
                      <property name="text">
-                      <string>Select Model (PyTorch/TensorRT/.pth)</string>
+                      <string>选择模型 (PyTorch/TensorRT/.pth)</string>
                      </property>
                     </widget>
                    </item>
@@ -5744,7 +5744,7 @@ background-color:white;
                     <item>
                      <widget class="QLabel" name="label_67">
                       <property name="text">
-                       <string>Uninstall App</string>
+                       <string>卸载应用</string>
                       </property>
                      </widget>
                     </item>
@@ -5760,7 +5760,7 @@ background-color:white;
                     </font>
                    </property>
                    <property name="text">
-                    <string>Backends</string>
+                    <string>后端</string>
                    </property>
                   </widget>
                  </item>
@@ -5777,7 +5777,7 @@ color: red;
 }</string>
                    </property>
                    <property name="text">
-                    <string>Your PC does not have enough storage for PyTorch/TensorRT. Please free up at least 15gb.</string>
+                    <string>你的电脑没有足够的存储空间来安装 PyTorch/TensorRT。请至少释放 15GB 空间。</string>
                    </property>
                   </widget>
                  </item>
@@ -5836,7 +5836,7 @@ color: red;
                             </size>
                            </property>
                            <property name="toolTip">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;PyTorch Version&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- This is the version downloaded&lt;/p&gt;&lt;p&gt;- 2.13 (CUDA 13): Newest. Best for RTX 50-series (Blackwell) and newer GPUs. Recommended. (Requires Turing/RTX 20-series or newer, or CUDA 12.x driver on older cards)&lt;/p&gt;&lt;p&gt;- 2.9 (CUDA 13): All RTX 20-40 series. Good all-rounder.&lt;/p&gt;&lt;p&gt;- 2.8 (CUDA 12.9): All RTX cards.&lt;/p&gt;&lt;p&gt;- 2.6 (CUDA 11.8): Supports older CUDA-enabled GPUs (GTX 10/16-series, V100, older). Use this if newer versions fail to load on your GPU.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;PyTorch 版本&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- 这是将要下载的版本&lt;/p&gt;&lt;p&gt;- 2.13 (CUDA 13)：最新。最适合 RTX 50 系列（Blackwell）及更新的 GPU。推荐。（需要 Turing/RTX 20 系列或更新，或在较旧显卡上使用 CUDA 12.x 驱动）&lt;/p&gt;&lt;p&gt;- 2.9 (CUDA 13)：适用于所有 RTX 20-40 系列。全能之选。&lt;/p&gt;&lt;p&gt;- 2.8 (CUDA 12.9)：适用于所有 RTX 显卡。&lt;/p&gt;&lt;p&gt;- 2.6 (CUDA 11.8)：支持较旧的 CUDA GPU（GTX 10/16 系列、V100 等）。如果较新版本在你的 GPU 上无法加载，请使用此项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                            </property>
                            <property name="toolTipDuration">
                             <number>0</number>
@@ -5855,14 +5855,14 @@ color: red;
                          <item row="1" column="0">
                           <widget class="QLabel" name="label_65">
                            <property name="text">
-                            <string>PyTorch Version</string>
+                            <string>PyTorch 版本</string>
                            </property>
                           </widget>
                          </item>
                          <item row="3" column="0">
                           <widget class="QLabel" name="label_53">
                            <property name="text">
-                            <string>PyTorch Backend</string>
+                            <string>PyTorch 后端</string>
                            </property>
                           </widget>
                          </item>
@@ -5894,7 +5894,7 @@ color: red;
                             </size>
                            </property>
                            <property name="toolTip">
-                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;PyTorch Backend&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- CUDA: NVIDIA GPUs 10 series and up&lt;/p&gt;&lt;p&gt;- ROCm: AMD (Linux Only) 7000 series(maybe) and up&lt;/p&gt;&lt;p&gt;- xpu: Intel: idk fam, dunno if this even works lowkey&lt;/p&gt;&lt;p&gt;- MPS: Apple Mac M series SOCs only.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;PyTorch 后端&lt;/span&gt;&lt;/p&gt;&lt;p&gt;- CUDA：NVIDIA 10 系列及以上 GPU&lt;/p&gt;&lt;p&gt;- ROCm：AMD（仅 Linux）7000 系列（大概）及以上&lt;/p&gt;&lt;p&gt;- xpu：Intel——不太确定，能不能用也不好说&lt;/p&gt;&lt;p&gt;- MPS：仅 Apple Mac M 系列芯片。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                            </property>
                            <property name="toolTipDuration">
                             <number>0</number>
@@ -5960,7 +5960,7 @@ color: red;
                             <item>
                              <widget class="QLabel" name="label_25">
                               <property name="text">
-                               <string>Install Recommended Dependencies</string>
+                               <string>安装推荐的依赖</string>
                               </property>
                              </widget>
                             </item>
@@ -6047,7 +6047,7 @@ color: red;
                         <item>
                          <widget class="QLabel" name="label_10">
                           <property name="text">
-                           <string>NCNN Vulkan (All GPUs, slower inference, small download)</string>
+                           <string>NCNN Vulkan（所有 GPU，推理较慢，下载体积小）</string>
                           </property>
                          </widget>
                         </item>
@@ -6136,7 +6136,7 @@ color: red;
                            </sizepolicy>
                           </property>
                           <property name="text">
-                           <string>PyTorch (NVIDIA/CUDA, AMD/ROCm (Linux Only), INTEL/xpu, MacOS/MPS)</string>
+                           <string>PyTorch（NVIDIA/CUDA、AMD/ROCm（仅 Linux）、INTEL/xpu、MacOS/MPS）</string>
                           </property>
                          </widget>
                         </item>
@@ -6219,7 +6219,7 @@ color: red;
                         <item>
                          <widget class="QLabel" name="label_8">
                           <property name="text">
-                           <string>TensorRT (Nvidia RTX 20 series and up, fastest inference, largest download)</string>
+                           <string>TensorRT（Nvidia RTX 20 系列及以上，推理最快，下载体积最大）</string>
                           </property>
                          </widget>
                         </item>
@@ -6302,7 +6302,7 @@ color: red;
                         <item>
                          <widget class="QLabel" name="label_28">
                           <property name="text">
-                           <string>DirectML - NOT IMPLEMENTED YET (All DirectX12 capable GPUs, faster inference, small download, Windows only)</string>
+                           <string>DirectML - 尚未实现（所有支持 DirectX12 的 GPU，推理较快，下载体积小，仅 Windows）</string>
                           </property>
                          </widget>
                         </item>

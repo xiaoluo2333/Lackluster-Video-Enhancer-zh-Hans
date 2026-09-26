@@ -28,7 +28,7 @@ class BackendHandler:
         return_code = str(output.getReturnCode()).strip()
         output: str = output.getOutput()
         if "ERROR" in output or "TRACEBACK" in output or return_code == "1":
-            TextOutputPopup(f"ERROR DETECTED IN BACKEND SETUP!\n{output}", title="FATAL ERROR")
+            TextOutputPopup(f"后端设置检测到错误！\n{output}", title="严重错误")
             exit(1)
         
         output = output.split(" ")

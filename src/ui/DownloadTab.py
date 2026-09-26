@@ -118,7 +118,7 @@ class DownloadTab:
         reply = QMessageBox.question(
             self.parent,
             "",
-            "Are you sure you want to uninstall?",
+            "是否确定要卸载？",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,  # type: ignore
         )
@@ -193,7 +193,7 @@ class DownloadTab:
 
         if not pytorch_ver:
             RegularQTPopup(
-                "Please select a valid PyTorch version from the dropdown."
+                "请从下拉列表中选择有效的 PyTorch 版本。"
             )
             return return_code
         if current_pytorch_backend == "cuda" or dep.lower() == "tensorrt":
@@ -212,9 +212,9 @@ class DownloadTab:
             return_code = self.downloadDeps.downloadPythonDeps(dep, pytorch_ver.torch_version, torchvision_ver, pytorch_backend.lower(), install)
             if return_code == 0 and not self.skip_info_popup:
                 RegularQTPopup(
-                    "Download Complete\nPlease restart the application to apply changes."
+                    "下载完成\n请重启应用以应用更改。"
                 )
             elif return_code != 0:
-                RegularQTPopup("Download Failed!\nPlease check logs for more info.")
+                RegularQTPopup("下载失败！\n请查看日志获取更多信息。")
 
         return return_code

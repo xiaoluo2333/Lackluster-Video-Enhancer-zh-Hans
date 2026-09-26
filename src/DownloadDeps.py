@@ -40,25 +40,25 @@ def run_executable(exe_path):
         result = subprocess.run(exe_path, check=True, capture_output=True, text=True)
 
         # Print the output of the executable
-        print("STDOUT:", result.stdout)
+        print("标准输出:", result.stdout)
 
         # Print any error messages
-        print("STDERR:", result.stderr)
+        print("标准错误:", result.stderr)
 
         # Print the exit code
-        print("Exit Code:", result.returncode)
+        print("退出码:", result.returncode)
 
     except subprocess.CalledProcessError as e:
-        print("An error occurred while running the executable.")
-        print("Exit Code:", e.returncode)
-        print("Output:", e.output)
-        print("Error:", e.stderr)
+        print("运行可执行文件时发生错误。")
+        print("退出码:", e.returncode)
+        print("输出:", e.output)
+        print("错误:", e.stderr)
         return False
     except FileNotFoundError:
-        print("The specified executable was not found.")
+        print("未找到指定的可执行文件。")
         return False
     except Exception as e:
-        print("An unexpected error occurred:", str(e))
+        print("发生意外错误:", str(e))
         return False
     return True
 
@@ -96,7 +96,7 @@ class Backend(Dependency):
             return
         needs_network_else_exit()
         download_link = self.get_download_link()
-        DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="Downloading Backend")
+        DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="正在下载后端")
         extractTarGZ(self.download_path)
     
     def get_if_update_available(self) -> bool:
@@ -111,12 +111,12 @@ class Backend(Dependency):
             if process.returncode != 0:
                 raise subprocess.CalledProcessError(process.returncode, process.args, stdout, stderr)
             output = stdout.strip() # this extracts the version number from the output
-            log(f"\nBackend Version: {output}\n")
+            log(f"\n后端版本: {output}\n")
             update_available = not output == backend_dev_version
             self.is_update_available = update_available
             return update_available
         except subprocess.CalledProcessError as e: # if the backend is not found
-            log("Backend not found, downloading..." + str(e))
+            log("未找到后端，正在下载..." + str(e))
             self.download()
             self.is_update_available = False
             return False
@@ -150,7 +150,7 @@ class Python(Dependency):
         needs_network_else_exit()
         download_link = self.get_download_link()
         FileHandler.createDirectory(os.path.dirname(self.download_path))
-        DownloadProgressPopup(link = download_link, downloadLocation=self.download_path, title = f"Downloading Python {PYTHON_VERSION}")
+        DownloadProgressPopup(link = download_link, downloadLocation=self.download_path, title = f"正在下载 Python {PYTHON_VERSION}")
         extractTarGZ(self.download_path)
     
     def get_version(self):
@@ -168,14 +168,14 @@ class Python(Dependency):
         if is_update:
             reply = QMessageBox.question(
                 None,
-                "Update Python?",
-                "The installed version of Python is older than the current version of RVE. Update?",
+                "更新 Python？",
+                "已安装的 Python 版本低于当前 RVE 所需的版本。是否更新？",
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 QMessageBox.StandardButton.No,  # type: ignore
             )
             if reply == QMessageBox.Yes:  # type: ignore
                 self.is_update_available = True
-                print("Updating Python")
+                print("正在更新 Python")
             else:
                 is_update = False
         self.is_update_available = is_update
@@ -207,7 +207,7 @@ class FFMpeg(Dependency):
         needs_network_else_exit()
 
         download_link = self.get_download_link()
-        DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="Downloading FFMpeg")
+        DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="正在下载 FFmpeg")
         FileHandler.createDirectory(os.path.dirname(self.installed_path))
         FileHandler.moveFile(self.download_path, self.installed_path)
         FileHandler.makeExecutable(self.installed_path)
@@ -225,7 +225,7 @@ class VCRedList(Dependency):
             needs_network_else_exit()
 
             download_link = self.get_download_link()
-            DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="Downloading VCRedist")
+            DownloadProgressPopup(link=download_link, downloadLocation=self.download_path, title="正在下载 VCRedist")
             
             # Use ShellExecute to properly handle admin elevation
             import ctypes
@@ -240,11 +240,11 @@ class VCRedList(Dependency):
                 )
                 if result <= 32:  # Error codes are <= 32
                     RegularQTPopup(
-                        "Failed to launch VCRedist installer. Please run it manually."
+                        "无法启动 VCRedist 安装程序。请手动运行。"
                     )
             except Exception as e:
                 RegularQTPopup(
-                    f"Error launching VCRedist installer: {str(e)}\nThe installer will now close."
+                    f"启动 VCRedist 安装程序时出错: {str(e)}\n安装程序现在将关闭。"
                 )
 
 
@@ -279,7 +279,7 @@ class DownloadDependencies:
                 'CUDA_PATH', # Might conflict with GPU-aware packages
             ]
 
-            log("Cleaning up conflicting Steam environment variables...")
+            log("正在清理冲突的 Steam 环境变量...")
 
             for var in conflict_vars:
                 if var in os.environ:
@@ -309,12 +309,12 @@ class DownloadDependencies:
         command += deps
         # totalDeps = self.get_total_dependencies(deps)
         totalDeps = len(deps)
-        log("Downloading Deps: " + str(command))
-        log("Total Dependencies: " + str(totalDeps))
+        log("正在下载依赖: " + str(command))
+        log("依赖总数: " + str(totalDeps))
 
         d = DisplayCommandOutputPopup(
             command=command,
-            title="Download Dependencies",
+            title="正在下载依赖",
             progressBarLength=totalDeps,
         )
 
@@ -329,7 +329,7 @@ class DownloadDependencies:
         ]
         DisplayCommandOutputPopup(
             command=command,
-            title="Purging Cache",
+            title="正在清理缓存",
             progressBarLength=1,
         )
         if origTemp:
@@ -355,10 +355,10 @@ class DownloadDependencies:
     
     def downloadPythonDeps(self, backend, torch_version: Optional[str] = "2.7.0", torchvision_version: Optional[str] = "0.22.0", torch_backend: Optional[str] = "cu126", install: bool = True):
         deps = []
-        log("Downloading Python Deps for " + backend)
-        log("Torch Version: " + torch_version)
-        log("Torch Backend: " + torch_backend)
-        log("Torchvision Version: " + torchvision_version)
+        log("正在为以下后端下载 Python 依赖 " + backend)
+        log("Torch 版本: " + torch_version)
+        log("Torch 后端: " + torch_backend)
+        log("Torchvision 版本: " + torchvision_version)
         
 
         if install: # dont uninstall platform independent deps

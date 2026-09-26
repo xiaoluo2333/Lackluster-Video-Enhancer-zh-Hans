@@ -36,8 +36,8 @@ class DiscordRPC:
                     self.RPC.connect()  # Start the handshake loop
 
                     self.RPC.update(
-                        state="Enhancing Video",
-                        details="Running batch process...",
+                        state="正在增强视频",
+                        details="正在运行批量处理...",
                         large_image="logo-v2",
                     )
                 except Exception:
@@ -46,7 +46,7 @@ class DiscordRPC:
             # The presence will stay on as long as the program is running
             # Can only update rich presence every 15 seconds
             except Exception:
-                log("Timed out!")
+                log("连接超时！")
 
     def closeRPC(self):
         try:

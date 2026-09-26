@@ -1,83 +1,83 @@
-# REAL Video Enhancer
-<h1>NOTICE</h1>
-<h3>This is an actively maintained fork of REAL Video Enhancer with bug fixes, stability improvements, and performance optimizations applied on top of the archived upstream.</h3>
+# REAL 视频增强器
+<h1>公告</h1>
+<h3>这是 REAL Video Enhancer 的一个积极维护分支：在已归档的上游版本之上，应用了缺陷修复、稳定性改进与性能优化。</h3>
 
-## Changes in this fork
+## 本分支的改动
 
-**Newest additions**
-- Added **bfloat16** as a precision option for the PyTorch backend. `Auto` now uses bfloat16 on RTX 30-series/Ampere+ GPUs (same speed as fp16, better dynamic range — no overflow on bright/HDR content) and fp16 elsewhere. The TensorRT backend always uses fp16/fp32 engines (bf16 is not supported for TensorRT engines).
-- Added **PyTorch 2.13** (CUDA 13 / Blackwell / RTX 50-series) and **TensorRT 11** as selectable install options. Older versions (2.9 / 2.8 / 2.6) are kept in the dropdown for compatibility with older GPUs — see the tooltip notes in the app.
-- **TensorRT engine fixes on the 2.13 / TRT 11 stack**: bf16 is never passed to TRT engine builds, and the RIFE `grid_sampler` decomposition that caused ghosting/flash artifacts on torch-tensorrt 2.13 has been replaced with the native grid_sampler path (engines rebuild automatically with a `_gsnative` suffix).
-- Fixed the PyInstaller build (`backports` runtime error on Python 3.11) and made `build.py` stop force-recreating an existing venv.
-- Fixed the GitHub Actions CI for this fork (branches + release notes from this repo, Node 24 runtimes, macOS Homebrew tap-trust/llvm fixes); `build-prerelease` builds Windows/Linux/macOS and publishes a release.
-- App update checks, the home-tab changelog, and backend downloads now point at **this fork** instead of upstream.
-- Windows installer (NSIS) version synced to 2.4.2, branded as **LacklusterOpsec**, with the start-menu shortcut installed directly (no company subfolder).
+**最新新增**
+- 新增 **bfloat16** 作为 PyTorch 后端的精度选项。`Auto` 现在会在 RTX 30 系列 / Ampere 及以上 GPU 上使用 bfloat16（速度与 fp16 相同，动态范围更好 —— 明亮 / HDR 内容不会溢出），其他情况使用 fp16。TensorRT 后端始终使用 fp16/fp32 引擎（TensorRT 引擎不支持 bf16）。
+- 新增 **PyTorch 2.13**（CUDA 13 / Blackwell / RTX 50 系列）与 **TensorRT 11** 作为可选安装项。旧版本（2.9 / 2.8 / 2.6）保留在下拉菜单中，以兼容较旧的 GPU —— 详见应用内的提示信息。
+- **2.13 / TRT 11 组合下的 TensorRT 引擎修复**：不再向 TRT 引擎构建传入 bf16；此前在 torch-tensorrt 2.13 上导致重影/闪烁伪影的 RIFE `grid_sampler` 拆解实现，已替换为原生 grid_sampler 路径（引擎会自动以 `_gsnative` 后缀重新构建）。
+- 修复了 PyInstaller 构建（Python 3.11 上的 `backports` 运行时错误），并让 `build.py` 不再强制重建已存在的 venv。
+- 修复了本分支的 GitHub Actions CI（使用本仓库的分支与发行说明、Node 24 运行时、macOS Homebrew tap 信任 / llvm 修复）；`build-prerelease` 会构建 Windows/Linux/macOS 并发布 release。
+- 应用更新检查、主页选项卡的更新日志以及后端下载现在都指向**本分支**，而不是上游。
+- Windows 安装程序（NSIS）版本同步至 2.4.2，品牌标记为 **LacklusterOpsec**，开始菜单快捷方式直接安装（无公司子文件夹）。
 
-**Bug fixes**
-- Fixed FFmpeg reading randomly stopping mid-render (`-nostdin` on the reader process)
-- Fixed rotated / iPhone portrait videos failing to render (rotation-aware dimensions, safe crop clamping, `-noautorotate` in border detection)
-- Fixed PySceneDetect misbehaving when restoration models are enabled
-- Fixed render-thread crashes hanging the whole app (global exception handler with traceback)
-- Fixed pause/resume race with shared-memory pause block at startup
-- Fixed NCNN scale detection crashing when a model name does not include the scale
-- Fixed segmented scene detection only evaluating part of the image
-- Fixed NCNN upscale frames reporting pre-scale dimensions
-- Fixed decimal (non-integer) interpolation frame timing and cache step
-- Fixed progress/ETA undercounting and wrong FPS after pausing
-- Failed simple-install now exits cleanly instead of launching a broken UI
+**缺陷修复**
+- 修复了 FFmpeg 读取在渲染中途随机停止的问题（读取进程使用 `-nostdin`）
+- 修复了旋转 / iPhone 竖屏视频无法渲染的问题（感知旋转的尺寸、安全的裁剪钳制、边界检测中的 `-noautorotate`）
+- 修复了启用修复模型时 PySceneDetect 行为异常的问题
+- 修复了渲染线程崩溃导致整个应用卡死的问题（带 traceback 的全局异常处理器）
+- 修复了启动时与共享内存暂停块相关的暂停/恢复竞争问题
+- 修复了模型名称不含缩放倍数时 NCNN 缩放倍数检测崩溃的问题
+- 修复了分段场景检测只评估部分图像的问题
+- 修复了 NCNN 放大帧报告缩放前尺寸的问题
+- 修复了小数（非整数）插帧的帧时序与缓存步长
+- 修复了暂停后进度 / 预计剩余时间少算以及 FPS 错误的问题
+- 简单安装失败时现在会干净退出，而不是启动一个损坏的界面
 
-**Performance / stability**
-- Removed a global CUDA synchronization and a redundant tensor clone per frame
-- Scene detection now downscales on the GPU (no full-res frame copy to CPU per frame)
-- Output override scale resizing moved off the CPU path (GPU resize when available)
-- NCNN fallback reuses its extractor instead of allocating per frame
-- TensorRT engine build now clears VRAM after compiling
-- AV1 / AV1 NVENC quality presets adjusted
-- Version bumped to 2.4.2
+**性能 / 稳定性**
+- 移除了每帧一次的全局 CUDA 同步与冗余张量克隆
+- 场景检测现在在 GPU 上降采样（不再每帧把全分辨率帧复制到 CPU）
+- 输出覆盖缩放的重置移出了 CPU 路径（可用时使用 GPU 缩放）
+- NCNN 回退实现复用其提取器，不再每帧分配
+- TensorRT 引擎构建完成后现在会清理 VRAM
+- 调整了 AV1 / AV1 NVENC 质量预设
+- 版本号提升至 2.4.2
 
-## Compatibility
+## 兼容性
 
-### PyTorch versions (selectable in the Download tab)
+### PyTorch 版本（可在“下载”选项卡中选择）
 
-| Version | CUDA wheel | GPU support | Notes |
+| 版本 | CUDA wheel | GPU 支持 | 说明 |
 |---|---|---|---|
-| **2.13.0** (default) | `+cu130` | RTX 20/30/40/50 (Turing / sm_75 and newer) | Newest. Best on RTX 50-series / Blackwell. Pairs with TensorRT 11. Requires CUDA 13-capable drivers. |
-| **2.9.0** | `+cu130` | RTX 20/30/40 (Turing+) | Stable all-rounder. |
-| **2.8.0** | `+cu129` | RTX 20/30/40 (Turing+) | |
-| **2.6.0** | `+cu118` | GTX 10/16, V100 and older (Pascal/Volta/Turing+) | Legacy fallback. Use this if newer versions fail to load on your GPU. |
+| **2.13.0**（默认） | `+cu130` | RTX 20/30/40/50（Turing / sm_75 及更新） | 最新版本。在 RTX 50 系列 / Blackwell 上表现最佳。搭配 TensorRT 11 使用。需要支持 CUDA 13 的驱动。 |
+| **2.9.0** | `+cu130` | RTX 20/30/40（Turing+） | 稳定的全能版本。 |
+| **2.8.0** | `+cu129` | RTX 20/30/40（Turing+） | |
+| **2.6.0** | `+cu118` | GTX 10/16、V100 及更旧（Pascal/Volta/Turing+） | 传统回退版本。如果较新版本在你的 GPU 上加载失败，请使用此版本。 |
 
-Notes:
-- **CUDA 13 (`+cu130`) requires Turing or newer (sm_7.5+).** Maxwell/Pascal/Volta GPUs (GTX 900/10, V100) must use the CUDA 11.8 build (**2.6.0**).
-- Volta (V100) support was dropped from newer CUDA 12.8+/13 wheel sets; use 2.6.0 for those cards.
-- **ROCm (AMD, Linux only):** 2.13 → ROCm 7.2, 2.9/2.8 → ROCm 6.4, 2.6 → ROCm 6.2.4.
-- **XPU (Intel):** available on all listed versions.
-- **MPS (Apple Silicon):** locked to PyTorch 2.9.0 for uint16 (HDR) support.
+说明：
+- **CUDA 13（`+cu130`）需要 Turing 或更新架构（sm_7.5+）。** Maxwell/Pascal/Volta GPU（GTX 900/10、V100）必须使用 CUDA 11.8 构建（**2.6.0**）。
+- Volta（V100）支持已从较新的 CUDA 12.8+ / 13 wheel 集合中移除；这些显卡请使用 2.6.0。
+- **ROCm（AMD，仅 Linux）：** 2.13 → ROCm 7.2，2.9/2.8 → ROCm 6.4，2.6 → ROCm 6.2.4。
+- **XPU（Intel）：** 上述所有版本均可用。
+- **MPS（Apple Silicon）：** 为支持 uint16（HDR）而锁定在 PyTorch 2.9.0。
 
-### Precision options
+### 精度选项
 
-| Precision | GPU support | Notes |
+| 精度 | GPU 支持 | 说明 |
 |---|---|---|
-| **auto** (default) | — | PyTorch backend: **bfloat16** on RTX 30-series / Ampere+ (sm_80+), **float16** elsewhere, **float32** if half precision is unavailable. TensorRT backend: always fp16/fp32 engines. |
-| **float16** | All CUDA/ROCm/XPU/MPS | Fastest, lowest VRAM. |
-| **bfloat16** | RTX 30-series+ (Ampere, sm_80+) | PyTorch backend only. Same speed as float16, but with an 8-bit exponent — no overflow on bright/HDR content. Falls back to float32 automatically if a model doesn't support it. TensorRT uses fp16 instead. |
-| **float32** | All | Slowest, most compatible. |
+| **auto**（默认） | — | PyTorch 后端：在 RTX 30 系列 / Ampere 及以上（sm_80+）使用 **bfloat16**，其他情况使用 **float16**，不支持半精度时使用 **float32**。TensorRT 后端：始终使用 fp16/fp32 引擎。 |
+| **float16** | 所有 CUDA/ROCm/XPU/MPS | 最快，显存占用最低。 |
+| **bfloat16** | RTX 30 系列及以后（Ampere，sm_80+） | 仅 PyTorch 后端。速度与 float16 相同，但具有 8 位指数 —— 在明亮 / HDR 内容上不会溢出。如果模型不支持，会自动回退到 float32。TensorRT 则改用 fp16。 |
+| **float32** | 全部 | 最慢，兼容性最好。 |
 
 ### TensorRT
 
-| PyTorch | TensorRT | torch-tensorrt | Notes |
+| PyTorch | TensorRT | torch-tensorrt | 说明 |
 |---|---|---|---|
-| **2.13.0** | **11.0.0.114** | 2.13.0 | CUDA 13. Requires Turing+ (RTX 20-series / sm_75+). |
-| 2.9.0 / 2.8.0 / 2.6.0 | 10.12.0.36 | matching torch version | Older TRT 10 line. |
+| **2.13.0** | **11.0.0.114** | 2.13.0 | 需要 CUDA 13。需要 Turing 及以上（RTX 20 系列 / sm_75+）。 |
+| 2.9.0 / 2.8.0 / 2.6.0 | 10.12.0.36 | 与 torch 版本匹配 | 较旧的 TRT 10 系列。 |
 
-Notes:
-- TensorRT requires an NVIDIA GPU with dedicated tensor cores — **RTX 20-series (Turing) or newer**. Not available on GTX 10/16-series or older.
-- TensorRT 11 requires CUDA 13-capable drivers (all RTX 20+ with recent drivers).
-- TensorRT engines are built in fp16/fp32 only (no bf16 engine support).
-- On torch-tensorrt 2.13 / TRT 11, the RIFE engine uses the native `grid_sampler` path (the older manual decomposition caused ghosting/flash artifacts on this stack).
+说明：
+- TensorRT 需要带专用张量核心的 NVIDIA GPU —— **RTX 20 系列（Turing）或更新**。GTX 10/16 系列及更旧的显卡不可用。
+- TensorRT 11 需要支持 CUDA 13 的驱动（所有使用较新驱动的 RTX 20+）。
+- TensorRT 引擎仅以 fp16/fp32 构建（不支持 bf16 引擎）。
+- 在 torch-tensorrt 2.13 / TRT 11 上，RIFE 引擎使用原生 `grid_sampler` 路径（旧的手动拆解实现会在该组合上导致重影/闪烁伪影）。
 
-### NCNN (Vulkan)
+### NCNN（Vulkan）
 
-Works on any GPU with a Vulkan driver (NVIDIA, AMD, Intel, Apple Silicon). No CUDA requirement. Great fallback for older hardware or when CUDA is unavailable.
+任何具备 Vulkan 驱动的 GPU 均可运行（NVIDIA、AMD、Intel、Apple Silicon）。无需 CUDA。是较旧硬件或 CUDA 不可用时的绝佳回退方案。
 
 ![license](https://img.shields.io/github/license/LacklusterOpsec/Lackluster-Video-Enhancer)
 ![Version](https://img.shields.io/badge/Version-2.4.2-blue)
@@ -86,64 +86,64 @@ Works on any GPU with a Vulkan driver (NVIDIA, AMD, Intel, Apple Silicon). No CU
   <img src="https://raw.githubusercontent.com/LacklusterOpsec/Lackluster-Video-Enhancer/v2-main/icons/logo-v2.svg" width = "25%">
 </p>
 
-# Table of Contents
+# 目录
   
-* **[Introduction](#introduction)**
-* **[Features](#Features)**
-* **[Compatibility](#compatibility)**
-* **[Hardware Requirements](#hardware-requirements)**
-* **[Models](#models)**
-  * [Interpolate Models](#interpolate-models)
-  * [Upscale Models](#upscale-models)
-* **[Backends](#backends)**
-* **[FAQ](#faq)**
-  * [General App Usage](#general-application-usage) 
-  * [TensorRT](#tensorrt-related-questions)
-  * [ROCm](#rocm-related-questions)
-  * [NCNN](#ncnn-related-questions)
-* **[Cloning](#cloning)**
-* **[Building](#building)**
-* **[Colab Notebook](#colab-notebook)**
-* **[Credits](#credits)**
+* **[简介](#简介)**
+* **[功能](#功能)**
+* **[兼容性](#兼容性)**
+* **[硬件与软件要求](#硬件与软件要求)**
+* **[模型](#模型)**
+  * [插帧模型](#插帧模型)
+  * [放大模型](#放大模型)
+* **[后端](#后端)**
+* **[常见问题](#常见问题)**
+  * [常规应用使用](#常规应用使用)
+  * [TensorRT](#tensorrt-相关问题)
+  * [ROCm](#rocm-相关问题)
+  * [NCNN](#ncnn-相关问题)
+* **[克隆](#克隆)**
+* **[构建](#构建)**
+* **[Colab 笔记本](#colab-笔记本)**
+* **[致谢](#致谢)**
 
-# Introduction
+# 简介
 
-<strong>REAL Video Enhancer</strong>  is a redesigned and enhanced version of the original Rife ESRGAN App for Linux. This program offers convenient access to frame interpolation and upscaling functionalities on Windows, Linux and MacOS, and is an alternative to outdated software like <a rel="noopener noreferrer" href="https://nmkd.itch.io/flowframes" target="_blank" >Flowframes</a> or <a rel="noopener noreferrer" href="https://github.com/mafiosnik777/enhancr" target="_blank">enhancr</a>.
+<strong>REAL 视频增强器</strong> 是原 Rife ESRGAN App for Linux 的重新设计与增强版本。本程序在 Windows、Linux 和 macOS 上提供便捷的插帧与放大功能，是 <a rel="noopener noreferrer" href="https://nmkd.itch.io/flowframes" target="_blank" >Flowframes</a> 或 <a rel="noopener noreferrer" href="https://github.com/mafiosnik777/enhancr" target="_blank">enhancr</a> 等过时软件的替代品。
 
 <p align=center>
   <img src="https://raw.githubusercontent.com/LacklusterOpsec/Lackluster-Video-Enhancer/v2-main/screenshots/demo.png" width = "100%">
 </p>
-<h1>Features: </h1>
+# 功能
 <ul>
-  <li> Windows support. <strong>!!! NOTICE !!!</strong> The bin can be detected as a trojan. This is a false positive caused by pyinstaller.</li>
-  <li> Ubuntu 22.04+ support on Executable and Flatpak. (20.04 can work but is now legacy) </li>
-  <li> MacOS 15+ arm/x86 support </li>
-  <li> Discord RPC support for Discord system package and Discord flatpak. </li>
-  <li> Scene change detection to preserve sharp transitions. </li>
-  <li> Preview that shows latest frame that has been rendered. </li>
-  <li> TensorRT and NCNN for efficient inference across many GPUs. </li>
+  <li> 支持 Windows。<strong>!!! 注意 !!!</strong> 该可执行文件可能被检测为木马。这是 pyinstaller 导致的误报。</li>
+  <li> 支持 Ubuntu 22.04+ 的可执行文件与 Flatpak。（20.04 可用，但已属传统支持） </li>
+  <li> 支持 macOS 15+ arm/x86 </li>
+  <li> 支持 Discord 系统包与 Discord flatpak 的 Discord RPC。 </li>
+  <li> 场景变化检测，以保留锐利的转场。 </li>
+  <li> 预览窗口显示最新已渲染的帧。 </li>
+  <li> 使用 TensorRT 与 NCNN 在多种 GPU 上高效推理。 </li>
 </ul>
 
-# Hardware/Software Requirements
-|  | Minimum | Recommended | 
+# 硬件与软件要求
+|  | 最低配置 | 推荐配置 | 
  |--|--|--|
-| CPU | Dual Core x64 bit | Quad Core x64 bit
-| GPU | Vulkan 1.3 capable device | Nvidia RTX GPU (20 series and up)
-| VRAM | 4 GB - NCNN | 8 GB - TensorRT (Nvidia, why keep making 8gb cards?)
-| RAM | 16 GB | 32 GB
-| Storage | 1 GB free - NCNN | 16 GB free - TensorRT
-| Operating System | Windows 10/11 64bit / MacOS 14+ | Any modern Linux distro (Ubuntu 22.04+)
+| CPU | 双核 x64 位 | 四核 x64 位
+| GPU | 支持 Vulkan 1.3 的设备 | Nvidia RTX GPU（20 系列及以上）
+| 显存 | 4 GB - NCNN | 8 GB - TensorRT（Nvidia，为什么还在做 8GB 显存的卡？）
+| 内存 | 16 GB | 32 GB
+| 存储 | 1 GB 可用空间 - NCNN | 16 GB 可用空间 - TensorRT
+| 操作系统 | Windows 10/11 64 位 / macOS 14+ | 任何现代 Linux 发行版（Ubuntu 22.04+）
 
-# Models:
-### Interpolate Models:
-| Model | Author | Link |
+# 模型
+### 插帧模型
+| 模型 | 作者 | 链接 |
 |--|--|--|
 | RIFE 4.6,4.7,4.15,4.18,4.22,4.22-lite,4.25 | Hzwer | [Practical-RIFE](https://github.com/hzwer/Practical-RIFE) 
 | GMFSS | 98mxr | [GMFSS_Fortuna](https://github.com/98mxr/GMFSS_Fortuna) 
 | IFRNet | ltkong218 | [IFRnet](https://github.com/ltkong218/IFRNet)
 
-### Upscale Models:
-| Model | Author | Link |
+### 放大模型
+| 模型 | 作者 | 链接 |
 |--|--|--|
 | 4x-SPANkendata | Crustaceous D | [4x-SPANkendata](https://openmodeldb.info/models/4x-SPANkendata) 
 | 4x-Nomos8k-SPAN series | Helaman | [4x-Nomos8k-SPAN series](https://openmodeldb.info/models/4x-Nomos8k-span-otf-strong) 
@@ -152,61 +152,61 @@ Works on any GPU with a Vulkan driver (NVIDIA, AMD, Intel, Apple Silicon). No CU
 | 2x-AniSD | SiroSky | [AniSD](https://github.com/Sirosky/Upscale-Hub/releases/tag/AniSD)
 | AnimeSR | Tencent ARC | [AnimeSR](https://github.com/TencentARC/AnimeSR)
 
-### Decompression Models:
-| Model | Author | Link |
+### 去除压缩模型
+| 模型 | 作者 | 链接 |
 |--|--|--|
 | DeH264 | Helaman | [1xDeH264_realplksr](https://github.com/Phhofm/models/releases/tag/1xDeH264_realplksr) 
 
-### Denoise Models:
-| Model | Author | Link |
+### 降噪模型
+| 模型 | 作者 | 链接 |
 |--|--|--|
 | DRUnet | cszn | [DRUnet](https://github.com/cszn/DPIR)
 | DnCNN | czsn | [DnCNN](https://github.com/cszn/DPIR)
 
-# Backends
-  | Backend | Hardware | 
+# 后端
+  | 后端 | 硬件 | 
   |--|--|
   | TensorRT | NVIDIA RTX GPUs
   | PyTorch  | CUDA 12.6 and ROCm 6.2 capable GPUs
   | NCNN | Vulkan 1.3 capable GPUs
  
-# FAQ
-### General Application Usage
-  | Question | Answer | 
+# 常见问题
+### 常规应用使用
+  | 问题 | 回答 | 
   |--|--|
-  | What does this program attempt to accomplish? | Fast, efficient and easily accessable video interpolation (Ex: 24->48FPS) and video upscaling (Ex: 1920->3840)
-  | Why is it failing to recognize installed backends? | REAL Video Enhancer uses PIP and portable python for inference, this can sometimes have issues installing. Please attempt reinstalling the app before creating an issue.
+  | 本程序试图实现什么？ | 快速、高效且易于使用的视频插帧（例如 24->48FPS）与视频放大（例如 1920->3840）
+  | 为什么无法识别已安装的后端？ | REAL Video Enhancer 使用 PIP 和便携式 Python 进行推理，安装过程有时会出问题。在提交 issue 之前，请先尝试重新安装本应用。
 
-### TensorRT related questions
+### TensorRT 相关问题
   |||
   |--|--|
-  | Why does it take so long to begin inference? | TensorRT uses advanced optimization at the beginning of inference based on your device, this is only done once per resolution of video inputed.
-  | Why does the optimization and inference fail? | The most common way an optimization can fail is **Limited VRAM** There is no fix to this except using CUDA or NCNN instead.
+  | 为什么开始推理要花很长时间？ | TensorRT 会在推理开始时根据你的设备进行高级优化，每种输入视频分辨率只需执行一次。
+  | 为什么优化和推理会失败？ | 优化失败最常见的原因是**显存不足**。除了改用 CUDA 或 NCNN，没有别的解决办法。
  
-### ROCm related questions
+### ROCm 相关问题
   |||
   |--|--|
-  | Why am I getting (Insert Error here)? | ROCM is buggy, please take a look at <a href="https://github.com/TNTwise/REAL-Video-Enhancer/wiki/ROCm-Help">ROCm Help</a>.
+  | 为什么我会遇到（在此填入错误信息）？ | ROCm 存在不少缺陷，请查看 <a href="https://github.com/TNTwise/REAL-Video-Enhancer/wiki/ROCm-Help">ROCm Help</a>。
 
-### NCNN related questions
+### NCNN 相关问题
   |||
   |--|--|
-  | Why am I getting (Insert Vulkan Error here)? | This usually is an OOM (Out Of Memory) error, this can indicate a weak iGPU or very old GPU, I recommeding trying out the <a href="https://github.com/TNTwise/REAL-Video-Enhancer-Colab">Colab Notebook</a>  instead.
+  | 为什么我会遇到（在此填入 Vulkan 错误信息）？ | 这通常是 OOM（内存不足）错误，可能说明 iGPU 性能较弱或 GPU 过于老旧，我建议改用 <a href="https://github.com/TNTwise/REAL-Video-Enhancer-Colab">Colab 笔记本</a>。
 
 
-# Cloning:
+# 克隆
 ```
-# Main
+# 主分支
 git clone --recurse-submodules https://github.com/LacklusterOpsec/Lackluster-Video-Enhancer --branch v2-main
 ```
-# Building:
+# 构建
 
-<p>3 supported build methods: </p>
-<p> - pyinstaller (recommended for Win/Mac) <br/>
-    - cx_freeze (recommended for Linux) <br/>
-    - nuitka (experimental)
+<p>支持 3 种构建方式：</p>
+<p> - pyinstaller（推荐用于 Windows/Mac）<br/>
+    - cx_freeze（推荐用于 Linux）<br/>
+    - nuitka（实验性）
 </p>
-<p>supported python versions: </p>
+<p>支持的 Python 版本：</p>
 <p> - 3.10 3.11, 3.12 <br/>
 </p>
 
@@ -214,42 +214,46 @@ git clone --recurse-submodules https://github.com/LacklusterOpsec/Lackluster-Vid
 python3 build.py --build BUILD_OPTION --copy_backend
 ```
 
-# Colab Notebook
- <a href="https://github.com/tntwise/REAL-Video-Enhancer-Colab">Colab Notebook</a>
+**构建产物（便携版）：** `dist\REAL-Video-Enhancer\REAL-Video-Enhancer.exe`
 
-# Credits:
-### People:
-| Person | For | Link |
+整个 `dist\REAL-Video-Enhancer\` 目录即为完整可运行的便携版本，可直接拷贝分发；双击 exe 即可启动，无需安装。
+
+# Colab 笔记本
+ <a href="https://github.com/tntwise/REAL-Video-Enhancer-Colab">Colab 笔记本</a>
+
+# 致谢
+### 个人
+| 人员 | 贡献 | 链接 |
 |--|--|--|
-| NevermindNilas | Some backend and reference code and working with me on many projects | https://github.com/NevermindNilas/ 
-| Styler00dollar | RIFE ncnn models (4.1-4.5, 4.7-4.12-lite), Sudo Shuffle Span, and Scene Detect Models | https://github.com/styler00dollar 
-| HolyWu | TensorRT engine generation code, inference optimizations, and RIFE jagged lines fixes | https://github.com/HolyWu/ 
-| Rick Astley | Amazing music | https://www.youtube.com/watch?v=dQw4w9WgXcQ 
+| NevermindNilas | 部分后端与参考代码，并与我在多个项目上合作 | https://github.com/NevermindNilas/ 
+| Styler00dollar | RIFE ncnn 模型（4.1-4.5、4.7-4.12-lite）、Sudo Shuffle Span 以及场景检测模型 | https://github.com/styler00dollar 
+| HolyWu | TensorRT 引擎生成代码、推理优化，以及 RIFE 锯齿线修复 | https://github.com/HolyWu/ 
+| Rick Astley | 出色的音乐 | https://www.youtube.com/watch?v=dQw4w9WgXcQ 
 
-### Software: 
-| Software Used | For | Link|
+### 软件
+| 使用的软件 | 用途 | 链接|
 |--|--|--|
-| FFmpeg | Multimedia framework for handling video, audio, and other media files | https://ffmpeg.org/ 
-| QT | GUI framework | https://qt.io/
-| FFMpeg Builds | Pre-compiled builds of FFMpeg. | Windows/Linux:  https://github.com/BtbN/FFmpeg-Builds, MacOS: https://github.com/eko5624/mpv-mac
-| PyTorch | Neural Network Inference (CUDA/ROCm/TensorRT) | https://pytorch.org/ 
-| NCNN | Neural Network Inference (Vulkan) | https://github.com/tencent/ncnn 
-| RIFE | Real-Time Intermediate Flow Estimation for Video Frame Interpolation | https://github.com/hzwer/Practical-RIFE 
-| rife-ncnn-vulkan | Video frame interpolation implementation using NCNN and Vulkan | https://github.com/nihui/rife-ncnn-vulkan 
-| rife ncnn vulkan python | Python bindings for RIFE NCNN Vulkan implementation | https://github.com/media2x/rife-ncnn-vulkan-python 
-| GMFSS | GMFlow based Anime VFI | https://github.com/98mxr/GMFSS_Fortuna
-| GIMM | Motion Modeling Realistic VFI | https://github.com/GSeanCDAT/GIMM-VFI 
-| ncnn python | Python bindings for NCNN Vulkan framework | https://pypi.org/project/ncnn 
-| Real-ESRGAN | Upscaling | https://github.com/xinntao/Real-ESRGAN 
-| SPAN | Upscaling | https://github.com/hongyuanyu/SPAN 
-| Spandrel | CUDA upscaling model architecture support | https://github.com/chaiNNer-org/spandrel 
-| ChaiNNer | Model Scale Detection | https://github.com/chaiNNer-org/chainner
-| cx_Freeze | Tool for creating standalone executables from Python scripts (Linux build) | https://github.com/marcelotduarte/cx_Freeze 
-| PyInstaller | Tool for creating standalone executables from Python scripts (Windows/Mac builds) | https://github.com/pyinstaller/pyinstaller
-| Feather Icons | Open source icons library | https://github.com/feathericons/feather 
-| PySceneDetect | Transition detection library for python | https://github.com/Breakthrough/PySceneDetect/
-| Python Standalone Builds | Backend inference using portable python, helps when porting to different platforms. | https://github.com/indygreg/python-build-standalone |
+| FFmpeg | 用于处理视频、音频及其他媒体文件的多媒体框架 | https://ffmpeg.org/ 
+| QT | GUI 框架 | https://qt.io/
+| FFMpeg Builds | FFMpeg 的预编译构建。 | Windows/Linux:  https://github.com/BtbN/FFmpeg-Builds, MacOS: https://github.com/eko5624/mpv-mac
+| PyTorch | 神经网络推理（CUDA/ROCm/TensorRT） | https://pytorch.org/ 
+| NCNN | 神经网络推理（Vulkan） | https://github.com/tencent/ncnn 
+| RIFE | 用于视频插帧的实时中间流估计 | https://github.com/hzwer/Practical-RIFE 
+| rife-ncnn-vulkan | 使用 NCNN 和 Vulkan 的视频插帧实现 | https://github.com/nihui/rife-ncnn-vulkan 
+| rife ncnn vulkan python | RIFE NCNN Vulkan 实现的 Python 绑定 | https://github.com/media2x/rife-ncnn-vulkan-python 
+| GMFSS | 基于 GMFlow 的动漫 VFI | https://github.com/98mxr/GMFSS_Fortuna
+| GIMM | 运动建模的真实感 VFI | https://github.com/GSeanCDAT/GIMM-VFI 
+| ncnn python | NCNN Vulkan 框架的 Python 绑定 | https://pypi.org/project/ncnn 
+| Real-ESRGAN | 放大 | https://github.com/xinntao/Real-ESRGAN 
+| SPAN | 放大 | https://github.com/hongyuanyu/SPAN 
+| Spandrel | CUDA 放大模型架构支持 | https://github.com/chaiNNer-org/spandrel 
+| ChaiNNer | 模型缩放倍数检测 | https://github.com/chaiNNer-org/chainner
+| cx_Freeze | 从 Python 脚本创建独立可执行文件的工具（Linux 构建） | https://github.com/marcelotduarte/cx_Freeze 
+| PyInstaller | 从 Python 脚本创建独立可执行文件的工具（Windows/Mac 构建） | https://github.com/pyinstaller/pyinstaller
+| Feather Icons | 开源图标库 | https://github.com/feathericons/feather 
+| PySceneDetect | Python 转场检测库 | https://github.com/Breakthrough/PySceneDetect/
+| Python Standalone Builds | 使用便携式 Python 进行后端推理，便于移植到不同平台。 | https://github.com/indygreg/python-build-standalone |
 
 
-# Star History
+# Star 历史
 [![Star History Chart](https://api.star-history.com/svg?repos=LacklusterOpsec/Lackluster-Video-Enhancer&type=Date)](https://star-history.com/#LacklusterOpsec/Lackluster-Video-Enhancer&Date)

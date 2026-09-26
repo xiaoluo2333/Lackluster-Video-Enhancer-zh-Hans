@@ -270,12 +270,12 @@ class SettingsTab:
         outputlocation = self.parent.output_folder_location.text()
         if not (os.path.exists(outputlocation) and os.path.isdir(outputlocation)):
             RegularQTPopup(
-                "No videos folder\nSetting default output folder to home directory."
+                "未找到视频文件夹\n将默认输出文件夹设置为用户主目录。"
             )
             outputlocation = HOME_PATH
         if not checkForWritePermissions(outputlocation):
             RegularQTPopup(
-                "No permissions to export here!\nSetting default output folder to home directory."
+                "无权在此处导出！\n将默认输出文件夹设置为用户主目录。"
             )
             outputlocation = HOME_PATH
 
@@ -382,7 +382,7 @@ class SettingsTab:
                 )
                 self.parent.output_folder_location.setText(outputlocation)
             else:
-                RegularQTPopup("No permissions to export here!")
+                RegularQTPopup("无权在此处导出！")
 
 
 class Settings:

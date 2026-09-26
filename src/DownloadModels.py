@@ -42,13 +42,13 @@ class DownloadModel:
             "https://github.com/TNTwise/real-video-enhancer-models/releases/download/models/"
             + self.downloadModelFile
         )
-        title = "Downloading: " + self.downloadModelFile
+        title = "正在下载: " + self.downloadModelFile
         DownloadProgressPopup(
             link=url, title=title, downloadLocation=self.downloadModelPath
         )
-        print("Done")
+        print("完成")
         if "tar.gz" in self.downloadModelFile:
-            print("Extracting File")
+            print("正在解压文件")
             extractTarGZ(self.downloadModelPath)
         return True
 
